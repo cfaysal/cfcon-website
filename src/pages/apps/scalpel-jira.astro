@@ -7,16 +7,68 @@ import AppPage from '../../layouts/AppPage.astro';
   platform="Jira"
   tagline="The precision admin toolkit for Jira Cloud"
   icon="/icon-scalpel-jira.png"
-  description="Scalpel gives Jira admins the tools they need to analyze, clean up, and optimize their instance. Manage custom fields, workflows, screens, and more — all from a single interface. Built for admins who need surgical precision without the risk."
+  description="Scalpel gives Jira admins the tools they need to analyze, clean up, and optimize their instance. Scan for configuration debt, diagnose root causes, and fix issues — all from a single interface. Think of it as a health check for your Jira instance."
   features={[
-    'Custom Field Manager — analyze usage, find unused fields',
-    'Workflow Manager — audit and manage workflows',
-    'Screen Manager — identify unused screens',
-    'Project analysis and insights',
-    'Bulk operations with safety checks',
-    'Deep scan for thorough analysis',
-    'Scheduled scans for ongoing monitoring',
-    'Edition-based feature tiers',
+    'Health Score Dashboard — instance-wide grade (A-F) with trend tracking',
+    '12+ Scanner Modules — orphaned spaces, inactive users, stale projects, permission gaps',
+    'Deep Scan Matrix — cross-reference analysis of schemes, workflows, screens, and fields',
+    'Diagnosis Engine — 3-tier root cause analysis',
+    'Treatment Plans — actionable fix recommendations with impact preview',
+    'Admin Tools — Space Manager, Custom Field Manager, Scheme Manager, and more',
+    'User Offboarding & GDPR Anonymization',
+    'Scheduled Scans with notifications',
+    'Export as CSV, PDF, or Confluence page',
+    'Full Audit Log — every action tracked',
   ]}
   marketplaceUrl="https://marketplace.atlassian.com/apps/1522073931/scalpel-for-jira"
-/>
+>
+  <!-- How it works -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">1</div>
+        <h3 class="font-semibold mb-1">Scan</h3>
+        <p class="text-text-light text-sm">Run 12+ scanner modules to discover configuration issues across your instance</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">2</div>
+        <h3 class="font-semibold mb-1">Diagnose</h3>
+        <p class="text-text-light text-sm">Deep Scan cross-references and 3-tier analysis to understand root causes</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">3</div>
+        <h3 class="font-semibold mb-1">Plan</h3>
+        <p class="text-text-light text-sm">Treatment plans with What-If simulation before making changes</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">4</div>
+        <h3 class="font-semibold mb-1">Execute</h3>
+        <p class="text-text-light text-sm">Apply fixes with rollback support and full audit trail</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshots -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Dashboard with Health Score</h3>
+        <img src="/apps/scalpel-jira/dashboard-results.png" alt="Scalpel Dashboard with Health Score" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Scanner Modules</h3>
+        <img src="/apps/scalpel-jira/scanners.png" alt="Scalpel Scanner Modules" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Deep Scan Matrix</h3>
+        <img src="/apps/scalpel-jira/deep-scan-matrix.png" alt="Deep Scan Matrix" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Admin Tools</h3>
+        <img src="/apps/scalpel-jira/tools.png" alt="Scalpel Admin Tools" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</AppPage>

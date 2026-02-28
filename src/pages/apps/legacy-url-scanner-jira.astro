@@ -7,16 +7,63 @@ import AppPage from '../../layouts/AppPage.astro';
   platform="Jira"
   tagline="Find and fix outdated URLs after your Cloud migration"
   icon="/icon-legacy-url-scanner.png"
-  description="Migrated from Jira Server or Data Center? Legacy URL Scanner finds all the old URLs still hiding in your issues, comments, and custom fields — and helps you replace them with the correct Cloud URLs. Ensure a clean, complete migration."
+  description="Migrated from Jira Server or Data Center? Thousands of work items may still contain links pointing to your old instance. Legacy URL Scanner finds them automatically, replaces them with modern Jira Smart Links, and gives you the governance tools to keep your instance clean going forward."
   features={[
-    'Scan issues, comments, and custom fields',
-    'Detect Server/Data Center legacy URLs',
-    'Bulk replace with correct Cloud URLs',
-    'Project-scoped or instance-wide scans',
-    'Detailed scan reports',
-    'Scheduled scans for ongoing monitoring',
-    'Webhook notifications (Teams, Slack, custom)',
-    'Safe preview before replacing',
+    'Smart URL Detection — descriptions, comments, environment fields, custom fields',
+    'Content-Type Filter — scan work items, comments, or remote links',
+    'Bulk Fix & Async Fix — individual, bulk, or enterprise-grade async jobs',
+    'URL Mappings — map old domains to new Cloud domains with Smart Link conversion',
+    'Governance Rules — Block, Allow, Warn, or Replace URLs by pattern',
+    'Key Resolution — automatically resolve moved work items (OLD-123 to NEW-456)',
+    'User Reference Scanner — detect broken/deactivated user references',
+    'Scheduled Scans with auto-fix and cross-platform Confluence reporting',
+    'REGEXP Mode — custom regex patterns with capture groups (Advanced)',
+    'Notifications — Slack, Microsoft Teams, and custom webhooks',
   ]}
   marketplaceUrl="https://marketplace.atlassian.com/apps/72889190/legacy-url-scanner-for-jira"
-/>
+>
+  <!-- How it works -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">1</div>
+        <h3 class="font-semibold mb-1">Configure</h3>
+        <p class="text-text-light text-sm">Enter your old server hostnames and map them to Cloud URLs</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">2</div>
+        <h3 class="font-semibold mb-1">Scan</h3>
+        <p class="text-text-light text-sm">Scan by project, JQL query, or instance-wide to find all legacy URLs</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">3</div>
+        <h3 class="font-semibold mb-1">Fix</h3>
+        <p class="text-text-light text-sm">Preview changes, then replace individually or in bulk with Smart Links</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshots -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Dashboard</h3>
+        <img src="/apps/legacy-url-scanner-jira/dashboard.png" alt="Legacy URL Scanner Dashboard" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Scan Configuration</h3>
+        <img src="/apps/legacy-url-scanner-jira/scan.png" alt="Scan Configuration" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Results with Preview</h3>
+        <img src="/apps/legacy-url-scanner-jira/results-expanded.png" alt="Scan Results with Preview" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Domain Governance</h3>
+        <img src="/apps/legacy-url-scanner-jira/governance.png" alt="Domain Governance Rules" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</AppPage>

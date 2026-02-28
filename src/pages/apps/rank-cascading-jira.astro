@@ -7,16 +7,68 @@ import AppPage from '../../layouts/AppPage.astro';
   platform="Jira"
   tagline="Keep priorities aligned across your issue hierarchy"
   icon="/icon-rank-cascading.png"
-  description="Rank Cascading automatically propagates ranking from parent issues (epics) to their children. When you reorder your epics, child issues follow suit — keeping your backlog priorities consistent across the entire hierarchy."
+  description="Rank Cascading automatically calculates priority ranks for your Jira work items based on board position, status hierarchy, and swimlane grouping — with optional inheritance to child issues. Ranks are written to a number field of your choice, making them available in filters, dashboards, and automations."
   features={[
-    'Automatic rank cascading from epics to children',
-    'Board-aware ranking',
-    'Real-time sync on rank changes',
-    'Project-scoped configuration',
-    'Support for custom hierarchies',
-    'Bulk re-ranking operations',
-    'Detailed rank change logs',
-    'Edition-based feature tiers',
+    'Board-Based Ranking — position on your board determines base rank',
+    'Status Priority — In Progress ranks before Ready, which ranks before Backlog',
+    'Swimlane Grouping — group by Epic, Assignee, Priority, or custom JQL',
+    'Rank Inheritance — child issues automatically inherit parent rank',
+    'Cross-Board Ranking — aggregate work items across multiple boards',
+    'Visual Rank Map — interactive hierarchy view with swimlanes and epics',
+    'Conflict Detection — health scoring (A-F) identifies ranking inconsistencies',
+    'What-If Simulation — test rank changes before committing',
+    'Preview Mode — see exactly what will change before applying',
+    'Scheduled Sync — automatic daily rank updates',
   ]}
   marketplaceUrl="https://marketplace.atlassian.com/apps/1844919935/rank-cascading-for-jira"
-/>
+>
+  <!-- How it works -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">1</div>
+        <h3 class="font-semibold mb-1">Create</h3>
+        <p class="text-text-light text-sm">Create a cascade and select a board</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">2</div>
+        <h3 class="font-semibold mb-1">Configure</h3>
+        <p class="text-text-light text-sm">Set target field, status priority, and swimlanes</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">3</div>
+        <h3 class="font-semibold mb-1">Preview</h3>
+        <p class="text-text-light text-sm">Review calculated ranks before applying</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">4</div>
+        <h3 class="font-semibold mb-1">Sync</h3>
+        <p class="text-text-light text-sm">Ranks are calculated and written to your field</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshots -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">App Overview</h3>
+        <img src="/apps/rank-cascading-jira/app-overview.png" alt="Rank Cascading Overview" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Cascade Configuration</h3>
+        <img src="/apps/rank-cascading-jira/cascade-list.png" alt="Cascade List" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Visual Rank Map</h3>
+        <img src="/apps/rank-cascading-jira/rank-map.png" alt="Visual Rank Map" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">What-If Simulation</h3>
+        <img src="/apps/rank-cascading-jira/what-if-simulation.png" alt="What-If Simulation" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</AppPage>

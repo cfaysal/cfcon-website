@@ -7,16 +7,69 @@ import AppPage from '../../layouts/AppPage.astro';
   platform="Confluence"
   tagline="The precision admin toolkit for Confluence Cloud"
   icon="/icon-scalpel-confluence.png"
-  description="Scalpel for Confluence helps admins analyze and optimize their Confluence instance. Audit spaces, analyze content, manage permissions, and identify areas for cleanup — all with the precision your wiki deserves."
+  description="Over time, Confluence instances accumulate orphaned personal spaces, pages nobody has viewed in years, broken macros, label chaos, and permission configurations that no longer make sense. Scalpel finds these issues automatically and gives you the tools to fix them — safely and with full audit trail."
   features={[
-    'Space analysis and insights',
-    'Content audit across pages and blogs',
-    'Permission analysis',
-    'Unused content detection',
-    'Deep scan for thorough analysis',
-    'Scheduled scans for ongoing monitoring',
-    'Edition-based feature tiers',
-    'Export results for reporting',
+    'Health Score Dashboard — instance-wide grade (A-F) with trend tracking',
+    '13 Scanner Modules — orphaned spaces, inactive users, broken macros, label audit, and more',
+    'Deep Scan — 7-layer space anatomy: page tree, permissions, attachments, labels, macros, versions, trash',
+    'Dependency Graph — interactive D3 visualization of space structure',
+    'Diagnosis Engine — 3-tier root cause analysis',
+    '9 Admin Tools — Space, Permission, Template, Trash, Macro, Attachment, Label Manager & more',
+    'User Anonymizer for GDPR compliance',
+    'Scheduled Scans with notifications',
+    'Export as CSV, PDF, or Confluence page',
+    'Full Audit Log — every action tracked',
   ]}
   comingSoon={true}
-/>
+>
+  <!-- How it works -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <div class="bg-surface border border-border rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary mb-2">1</div>
+        <h3 class="font-semibold text-sm mb-1">Pre-Screen</h3>
+        <p class="text-text-light text-xs">Instance profile with key metrics</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary mb-2">2</div>
+        <h3 class="font-semibold text-sm mb-1">Scan</h3>
+        <p class="text-text-light text-xs">13 scanner modules discover hygiene issues</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary mb-2">3</div>
+        <h3 class="font-semibold text-sm mb-1">Deep Scan</h3>
+        <p class="text-text-light text-xs">Anatomize individual spaces in 7 layers</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary mb-2">4</div>
+        <h3 class="font-semibold text-sm mb-1">Diagnose</h3>
+        <p class="text-text-light text-xs">Root cause analysis</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-4 text-center">
+        <div class="text-2xl font-bold text-primary mb-2">5</div>
+        <h3 class="font-semibold text-sm mb-1">Fix</h3>
+        <p class="text-text-light text-xs">Built-in tools with audit trail</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshots -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Dashboard with Health Score</h3>
+        <img src="/apps/scalpel-confluence/dashboard.png" alt="Scalpel for Confluence Dashboard" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Scanner Modules</h3>
+        <img src="/apps/scalpel-confluence/scanners.png" alt="Scanner Modules" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Admin Tools</h3>
+        <img src="/apps/scalpel-confluence/tools.png" alt="Admin Tools" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</AppPage>

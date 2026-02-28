@@ -7,16 +7,59 @@ import AppPage from '../../layouts/AppPage.astro';
   platform="Confluence"
   tagline="Find and fix outdated URLs after your Cloud migration"
   icon="/icon-legacy-url-scanner.png"
-  description="After migrating Confluence to Cloud, legacy Server/Data Center URLs can linger in pages, blog posts, and comments. Legacy URL Scanner finds them all and helps you update them to the correct Cloud URLs — keeping your content clean and links working."
+  description="After migrating Confluence to Cloud, pages, blog posts, and comments may still contain links pointing to your old instance. Legacy URL Scanner finds them automatically, replaces them with modern Smart Links, and gives you governance tools to keep your content clean going forward."
   features={[
-    'Scan pages, blog posts, and comments',
-    'Detect Server/Data Center legacy URLs',
-    'Bulk replace with correct Cloud URLs',
-    'Space-scoped or instance-wide scans',
-    'Detailed scan reports',
-    'Scheduled scans for ongoing monitoring',
-    'Webhook notifications (Teams, Slack, custom)',
-    'Safe preview before replacing',
+    'Smart URL Detection — pages, blog posts, and comments',
+    'Content-Type Filter — dynamically select what to scan',
+    'Bulk Fix & Async Fix — individual, bulk, or enterprise-grade async jobs',
+    'URL Mappings — map old domains to new Cloud domains with Smart Link conversion',
+    'Governance Rules — Block, Allow, Warn, or Replace URLs by pattern',
+    'User Reference Scanner — detect broken/deactivated user references',
+    'Scheduled Scans with auto-fix and cross-platform Jira reporting',
+    'REGEXP Mode — custom regex patterns with capture groups (Advanced)',
+    'Cursor-Based Pagination — reliable scanning across large instances',
+    'Export scan results as CSV or JSON',
   ]}
   comingSoon={true}
-/>
+>
+  <!-- How it works -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">1</div>
+        <h3 class="font-semibold mb-1">Configure</h3>
+        <p class="text-text-light text-sm">Enter your old server hostnames and map them to Cloud URLs</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">2</div>
+        <h3 class="font-semibold mb-1">Scan</h3>
+        <p class="text-text-light text-sm">Scan by space, CQL query, or instance-wide to find all legacy URLs</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">3</div>
+        <h3 class="font-semibold mb-1">Fix</h3>
+        <p class="text-text-light text-sm">Preview changes, then replace individually or in bulk with Smart Links</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshots -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Scan Configuration</h3>
+        <img src="/apps/legacy-url-scanner-confluence/scan.png" alt="Scan Configuration" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Results with Preview</h3>
+        <img src="/apps/legacy-url-scanner-confluence/results-expanded.png" alt="Scan Results with Preview" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Domain Governance</h3>
+        <img src="/apps/legacy-url-scanner-confluence/governance.png" alt="Domain Governance Rules" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</AppPage>

@@ -7,18 +7,91 @@ import AppPage from '../../layouts/AppPage.astro';
   platform="Jira"
   tagline="Convert ScriptRunner & SIL scripts to Cloud in seconds"
   icon="/icon-alchemist.png"
-  description="Migrating from Jira Server or Data Center and stuck with legacy scripts? Alchemist analyzes your Groovy, SIL, ScriptRunner, and Behaviour scripts and converts them to native Jira Automation and Forge — with built-in risk assessment and preview before any changes are applied."
+  description="Migrating from Jira Server or Data Center and stuck with legacy scripts? Alchemist analyzes your Groovy, SIL, ScriptRunner, and Behaviour scripts and converts them to Cloud format using 1,300+ pattern-based transformations — no AI hallucination, just deterministic regex conversions with built-in risk assessment."
   features={[
-    'Script analysis with automatic language detection',
-    'Convert Groovy, SIL, ScriptRunner & Behaviour scripts',
-    'Risk assessment before conversion',
-    'Conversion preview — see changes before applying',
-    'Batch migration for multiple scripts',
-    'Migration Wizard for guided workflows',
-    '1,100+ conversion patterns',
-    'Export results as JSON/PDF',
-    'Rovo AI integration (Advanced)',
-    'Daily usage tracking with edition-based quotas',
+    'HAPI-First Conversion — 70% shorter code than verbose REST output',
+    'Language Detection — auto-detect Groovy vs. SIL from script content',
+    'Risk Analysis — Cloud Readiness Score (0-100) per script',
+    '1,300+ conversion patterns — ScriptRunner Groovy, SIL, Behaviours, Jira Expressions',
+    'Migration Wizard — 4-step guided migration (Input, Analyze, Convert, Deploy)',
+    'Syntax Validation — validate converted code for common errors',
+    'Bulk Upload — multi-file batch conversion',
+    'Deploy Helper — step-by-step deployment guides per script type',
+    'Alchemist AI — Rovo Agent for conversational migration assistance (Advanced)',
+    'Export as JSON, PDF, or plain script',
   ]}
   marketplaceUrl="https://marketplace.atlassian.com/apps/948516184/alchemist-for-jira"
-/>
+>
+  <!-- Supported Conversions -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Supported conversions</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-surface border border-border rounded-lg p-5">
+        <h3 class="font-semibold mb-2">ScriptRunner Groovy</h3>
+        <p class="text-text-light text-sm">Java API to Cloud Groovy (HAPI/REST) — 630+ patterns</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5">
+        <h3 class="font-semibold mb-2">Power Scripts (SIL)</h3>
+        <p class="text-text-light text-sm">SIL DC to SIL Cloud — 356+ patterns</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5">
+        <h3 class="font-semibold mb-2">Behaviours</h3>
+        <p class="text-text-light text-sm">Server Behaviours to ScriptRunner Behaviours Cloud</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5">
+        <h3 class="font-semibold mb-2">Jira Expressions</h3>
+        <p class="text-text-light text-sm">260+ condition/validator templates</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">1</div>
+        <h3 class="font-semibold mb-1">Input</h3>
+        <p class="text-text-light text-sm">Paste a script or upload multiple files</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">2</div>
+        <h3 class="font-semibold mb-1">Analyze</h3>
+        <p class="text-text-light text-sm">Risk assessment with Cloud Readiness Score</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">3</div>
+        <h3 class="font-semibold mb-1">Convert</h3>
+        <p class="text-text-light text-sm">Pattern-based transformation to Cloud format</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5 text-center">
+        <div class="text-3xl font-bold text-primary mb-2">4</div>
+        <h3 class="font-semibold mb-1">Deploy</h3>
+        <p class="text-text-light text-sm">Step-by-step deployment guide per script type</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screenshots -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">App Overview</h3>
+        <img src="/apps/alchemist-jira/app-overview.png" alt="Alchemist App Overview" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Risk Analysis</h3>
+        <img src="/apps/alchemist-jira/risk-analysis.png" alt="Risk Analysis with Cloud Readiness Score" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Conversion Output</h3>
+        <img src="/apps/alchemist-jira/conversion-output.png" alt="Conversion Output" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Migration Wizard</h3>
+        <img src="/apps/alchemist-jira/migration-wizard.png" alt="Migration Wizard" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</AppPage>
