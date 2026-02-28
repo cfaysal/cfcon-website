@@ -10,88 +10,76 @@ import Layout from '../layouts/Layout.astro';
         Have a question about our apps or need Atlassian consulting? We'd love to hear from you.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- Contact Form -->
-        <div>
-          <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-5">
-            <div>
-              <label for="name" class="block text-sm font-medium text-text mb-1">Name</label>
-              <input type="text" id="name" name="name" required
-                class="w-full px-4 py-2.5 border border-border rounded-lg text-sm text-text bg-surface-dark focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
-            </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-text mb-1">Email</label>
-              <input type="email" id="email" name="email" required
-                class="w-full px-4 py-2.5 border border-border rounded-lg text-sm text-text bg-surface-dark focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" />
-            </div>
-            <div>
-              <label for="subject" class="block text-sm font-medium text-text mb-1">Subject</label>
-              <select id="subject" name="subject"
-                class="w-full px-4 py-2.5 border border-border rounded-lg text-sm text-text bg-surface-dark focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                <option value="consulting">Consulting inquiry</option>
-                <option value="app-support">App support</option>
-                <option value="partnership">Partnership</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div>
-              <label for="message" class="block text-sm font-medium text-text mb-1">Message</label>
-              <textarea id="message" name="message" rows="5" required
-                class="w-full px-4 py-2.5 border border-border rounded-lg text-sm text-text bg-surface-dark focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"></textarea>
-            </div>
-            <button type="submit"
-              class="w-full px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
-              Send message
-            </button>
-          </form>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- General Contact -->
+        <div class="bg-surface-raised border border-border rounded-xl p-8">
+          <div class="mb-4">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2 class="text-xl font-semibold mb-2">General inquiries</h2>
+          <p class="text-text-light text-sm mb-6">
+            For consulting inquiries, partnerships, or general questions — reach out via email.
+          </p>
+          <a href="mailto:c.faysal@cfcon.org"
+            class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
+            c.faysal@cfcon.org
+          </a>
         </div>
 
-        <!-- Contact Info -->
-        <div class="space-y-8">
-          <div>
-            <h2 class="text-xl font-semibold mb-4">Direct contact</h2>
-            <div class="space-y-3 text-text-light">
-              <div class="flex items-center gap-3">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="text-primary shrink-0">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <a href="mailto:c.faysal@cfcon.org" class="hover:text-primary transition-colors">c.faysal@cfcon.org</a>
-              </div>
-              <div class="flex items-center gap-3">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="text-primary shrink-0">
-                  <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <a href="https://cfcon.org" class="hover:text-primary transition-colors">cfcon.org</a>
-              </div>
-            </div>
+        <!-- App Support -->
+        <div class="bg-surface-raised border border-border rounded-xl p-8">
+          <div class="mb-4">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
+          <h2 class="text-xl font-semibold mb-2">App support</h2>
+          <p class="text-text-light text-sm mb-6">
+            For app-specific support, bug reports, or feature requests — use our dedicated Service Desk.
+          </p>
+          <a href="https://cfcon.atlassian.net/servicedesk/customer/portal/4" target="_blank" rel="noopener"
+            class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
+            Open Support Request
+          </a>
+        </div>
 
-          <div>
-            <h2 class="text-xl font-semibold mb-4">App Support</h2>
-            <p class="text-text-light text-sm mb-3">
-              For app-specific support, use our dedicated Service Desk.
-            </p>
-            <a href="https://cfcon.atlassian.net/servicedesk/customer/portal/4" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline">
-              Open a Support Request &rarr;
-            </a>
-            <p class="text-text-light text-sm mt-4">
-              Or visit our vendor page on the Atlassian Marketplace.
-            </p>
-            <a href="https://marketplace.atlassian.com/vendors/69072148" target="_blank" rel="noopener"
-              class="inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline">
-              CFCON on Atlassian Marketplace &rarr;
-            </a>
+        <!-- Marketplace -->
+        <div class="bg-surface-raised border border-border rounded-xl p-8">
+          <div class="mb-4">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
+          <h2 class="text-xl font-semibold mb-2">Marketplace</h2>
+          <p class="text-text-light text-sm mb-6">
+            Find all our apps, reviews, and documentation on the Atlassian Marketplace.
+          </p>
+          <a href="https://marketplace.atlassian.com/vendors/69072148" target="_blank" rel="noopener"
+            class="inline-flex items-center px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors">
+            Visit Marketplace
+          </a>
+        </div>
 
-          <div class="bg-surface border border-border rounded-xl p-6">
-            <h3 class="font-semibold mb-2">Response time</h3>
-            <p class="text-text-light text-sm">
-              We typically respond within 1-2 business days. For urgent app issues, please mention "urgent" in your subject line.
-            </p>
+        <!-- Response Time -->
+        <div class="bg-surface-raised border border-border rounded-xl p-8">
+          <div class="mb-4">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+              <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
+          <h2 class="text-xl font-semibold mb-2">Response time</h2>
+          <p class="text-text-light text-sm mb-4">
+            We typically respond within 1-2 business days. For urgent app issues, please mention "urgent" in your subject line.
+          </p>
+          <p class="text-text-light text-sm">
+            <strong class="text-text">Location:</strong> Berg, Thurgau, Switzerland<br/>
+            <strong class="text-text">Timezone:</strong> CET (UTC+1)
+          </p>
         </div>
       </div>
     </div>
