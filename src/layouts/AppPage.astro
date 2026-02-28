@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { name, platform, tagline, description, features, marketplaceUrl, icon } = Astro.props;
-const platformColor = platform === 'Jira' ? 'bg-blue-100 text-blue-700' : 'bg-teal-100 text-teal-700';
+const platformColor = platform === 'Jira' ? 'bg-blue-900/50 text-blue-300' : 'bg-teal-900/50 text-teal-300';
 ---
 
 <Layout title={name} description={tagline}>
@@ -55,16 +55,16 @@ const platformColor = platform === 'Jira' ? 'bg-blue-100 text-blue-700' : 'bg-te
       <div class="mb-12">
         <h2 class="text-2xl font-semibold mb-6">Editions</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="bg-white border border-border rounded-xl p-6">
+          <div class="bg-surface-raised border border-border rounded-xl p-6">
             <h3 class="font-semibold text-lg mb-2">Free</h3>
             <p class="text-text-light text-sm">Get started with core features at no cost. Perfect for evaluating the app.</p>
           </div>
-          <div class="bg-white border-2 border-primary rounded-xl p-6 relative">
+          <div class="bg-surface-raised border-2 border-primary rounded-xl p-6 relative">
             <span class="absolute -top-3 left-4 bg-primary text-white text-xs font-medium px-2 py-0.5 rounded-full">Popular</span>
             <h3 class="font-semibold text-lg mb-2">Standard</h3>
             <p class="text-text-light text-sm">Expanded limits and additional features for growing teams.</p>
           </div>
-          <div class="bg-white border border-border rounded-xl p-6">
+          <div class="bg-surface-raised border border-border rounded-xl p-6">
             <h3 class="font-semibold text-lg mb-2">Advanced</h3>
             <p class="text-text-light text-sm">Full feature set with highest limits for enterprise-scale usage.</p>
           </div>

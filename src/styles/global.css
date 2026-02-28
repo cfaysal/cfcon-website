@@ -5,9 +5,10 @@
   --color-primary-dark: #A8181E;
   --color-primary-light: #E85A5F;
   --color-accent: #D4922A;
-  --color-surface: #FAFAFA;
+  --color-surface: #2A2A2A;
+  --color-surface-raised: #333333;
   --color-surface-dark: #1A1A1A;
-  --color-text: #1A1A1A;
-  --color-text-light: #5A5A5A;
-  --color-border: #E0E0E0;
+  --color-text: #E8E8E8;
+  --color-text-light: #9A9A9A;
+  --color-border: #3D3D3D;
 }
