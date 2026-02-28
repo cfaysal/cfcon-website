@@ -7,11 +7,12 @@ interface Props {
   tagline: string;
   description: string;
   features: string[];
-  marketplaceUrl: string;
+  marketplaceUrl?: string;
   icon: string;
+  comingSoon?: boolean;
 }
 
-const { name, platform, tagline, description, features, marketplaceUrl, icon } = Astro.props;
+const { name, platform, tagline, description, features, marketplaceUrl, icon, comingSoon = false } = Astro.props;
 const platformColor = platform === 'Jira' ? 'bg-blue-900/50 text-blue-300' : 'bg-teal-900/50 text-teal-300';
 ---
 
@@ -75,14 +76,25 @@ const platformColor = platform === 'Jira' ? 'bg-blue-900/50 text-blue-300' : 'bg
       <slot />
 
       <!-- CTA -->
-      <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center">
-        <h2 class="text-xl font-semibold mb-3">Ready to get started?</h2>
-        <p class="text-text-light mb-6">Install {name} from the Atlassian Marketplace.</p>
-        <a href={marketplaceUrl} target="_blank" rel="noopener"
-          class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
-          Get it on Marketplace
-        </a>
-      </div>
+      {comingSoon ? (
+        <div class="bg-amber-900/10 border border-amber-500/30 rounded-xl p-8 text-center">
+          <h2 class="text-xl font-semibold mb-3">Coming Soon</h2>
+          <p class="text-text-light mb-6">{name} is currently in development and will be available on the Atlassian Marketplace soon.</p>
+          <a href="/contact"
+            class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
+            Get notified
+          </a>
+        </div>
+      ) : (
+        <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center">
+          <h2 class="text-xl font-semibold mb-3">Ready to get started?</h2>
+          <p class="text-text-light mb-6">Install {name} from the Atlassian Marketplace.</p>
+          <a href={marketplaceUrl} target="_blank" rel="noopener"
+            class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
+            Get it on Marketplace
+          </a>
+        </div>
+      )}
     </div>
   </section>
 </Layout>

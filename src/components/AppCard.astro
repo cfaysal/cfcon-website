@@ -5,20 +5,22 @@ interface Props {
   description: string;
   href: string;
   icon: string;
+  comingSoon?: boolean;
 }
 
-const { name, platform, description, href, icon } = Astro.props;
+const { name, platform, description, href, icon, comingSoon = false } = Astro.props;
 
 const platformColor = platform === 'Jira' ? 'bg-blue-900/50 text-blue-300' : 'bg-teal-900/50 text-teal-300';
 ---
 
-<a href={href} class="group block bg-surface-raised border border-border rounded-xl p-6 hover:shadow-lg hover:border-primary-light transition-all duration-200">
+<a href={href} class={`group block bg-surface-raised border border-border rounded-xl p-6 hover:shadow-lg hover:border-primary-light transition-all duration-200 ${comingSoon ? 'opacity-75' : ''}`}>
   <div class="flex items-start gap-4">
     <img src={icon} alt={name} class="w-12 h-12 rounded-lg" />
     <div class="flex-1">
       <div class="flex items-center gap-2 mb-2">
         <h3 class="font-semibold text-lg text-text group-hover:text-primary transition-colors">{name}</h3>
         <span class={`text-xs font-medium px-2 py-0.5 rounded-full ${platformColor}`}>{platform}</span>
+        {comingSoon && <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-900/50 text-amber-300">Coming Soon</span>}
       </div>
       <p class="text-text-light text-sm leading-relaxed">{description}</p>
     </div>
