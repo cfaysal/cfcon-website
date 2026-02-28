@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Privacy Policy" description="CFCON Privacy Policy for Atlassian Marketplace Apps.">
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-6 prose max-w-none">
+      <h1 class="text-4xl font-bold mb-2">Privacy Policy</h1>
+      <p class="text-text-light text-lg mb-8">CFCON Atlassian Marketplace Apps</p>
+      <p class="text-sm text-text-light mb-10">Last updated: February 28, 2026</p>
+
+      <div class="space-y-8 text-text-light leading-relaxed">
+        <div>
+          <h2 class="text-xl font-semibold text-text mb-3">Introduction</h2>
+          <p>This Privacy Policy describes how CFCON ("we", "us", or "our") handles information in connection with our applications ("Apps") distributed through the Atlassian Marketplace.</p>
+          <p class="mt-2">This policy applies to all Apps published by CFCON on the Atlassian Marketplace.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-text mb-3">Data Collection and Processing</h2>
+          <h3 class="text-lg font-medium text-text mb-2">What Data We Access</h3>
+          <p>Our Apps may access the following data depending on the App's functionality:</p>
+          <ul class="list-disc pl-6 mt-2 space-y-1">
+            <li><strong>Issue Data:</strong> Keys, summaries, descriptions, statuses, labels, comments, issue links, and custom field values</li>
+            <li><strong>Page & Blog Data:</strong> Page titles, body content, comments, labels, and space information</li>
+            <li><strong>Board Data:</strong> Board configurations and issue order</li>
+            <li><strong>Project Information:</strong> Project keys and names</li>
+            <li><strong>Space Information:</strong> Space keys and names</li>
+            <li><strong>Custom Fields:</strong> Field values for reading and/or writing</li>
+            <li><strong>User Context:</strong> Your Atlassian account ID and locale for authentication and personalization</li>
+          </ul>
+
+          <h3 class="text-lg font-medium text-text mt-6 mb-2">What Data We Store</h3>
+          <p>Our Apps fall into two categories:</p>
+          <p class="mt-3"><strong>Apps with no data storage:</strong></p>
+          <ul class="list-disc pl-6 mt-1 space-y-1">
+            <li>All processing occurs in-memory during your active session</li>
+            <li>No data is persisted after the session ends</li>
+          </ul>
+          <p class="mt-3"><strong>Apps with configuration storage:</strong></p>
+          <ul class="list-disc pl-6 mt-1 space-y-1">
+            <li>App configurations and operational data are stored in Atlassian Forge Storage</li>
+            <li>This may include: settings, sync history, and aggregated statistics</li>
+            <li>All storage is exclusively within Atlassian's infrastructure</li>
+          </ul>
+          <p class="mt-3"><strong>For all Apps:</strong></p>
+          <ul class="list-disc pl-6 mt-1 space-y-1">
+            <li>No analytics or tracking is implemented</li>
+            <li>No personal data is stored outside of Atlassian</li>
+          </ul>
+          <p class="mt-3"><strong>Optional integrations:</strong></p>
+          <ul class="list-disc pl-6 mt-1 space-y-1">
+            <li>Some Apps offer optional webhook notifications (e.g., to Microsoft Teams, Slack, or custom endpoints)</li>
+            <li>These webhooks transmit only aggregated, non-personal data such as numerical scan results</li>
+            <li>Webhooks are disabled by default and must be explicitly configured by the customer</li>
+            <li>No personal data or content is included in webhook payloads</li>
+          </ul>
+
+          <h3 class="text-lg font-medium text-text mt-6 mb-2">What Data We Write</h3>
+          <p>Some Apps may write data back to your Atlassian instance (e.g., custom field values, updated URLs). This data remains entirely within your Atlassian instance.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-text mb-3">Data Security</h2>
+          <ul class="list-disc pl-6 space-y-1">
+            <li>All Apps run entirely on Atlassian Forge infrastructure</li>
+            <li>All data processing occurs within Atlassian's secure environment</li>
+            <li>No data leaves your Atlassian instance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-text mb-3">Data Retention</h2>
+          <ul class="list-disc pl-6 space-y-1">
+            <li><strong>In-memory data:</strong> Cleared after session ends</li>
+            <li><strong>Forge Storage data:</strong> Retained until manually deleted by user or App uninstallation</li>
+            <li><strong>Data written to Atlassian:</strong> Follows your Atlassian instance's retention policies</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-text mb-3">Third-Party Services</h2>
+          <p>Our Apps do not integrate with or send data to any third-party services.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-text mb-3">Your Rights</h2>
+          <ul class="list-disc pl-6 space-y-1">
+            <li><strong>Access:</strong> View stored configurations within each App's interface</li>
+            <li><strong>Deletion:</strong> Delete configurations and clear history via App settings</li>
+            <li><strong>Portability:</strong> Data written to Atlassian fields can be exported via standard Atlassian tools</li>
+          </ul>
+          <p class="mt-2">Since we do not store personal data outside of Atlassian, your organization retains full control over all data within your Atlassian instance.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-text mb-3">Children's Privacy</h2>
+          <p>Our Apps are designed for business use and are not intended for children under 16 years of age.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-text mb-3">Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. We will notify users of any material changes by updating the "Last updated" date.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-text mb-3">Contact Us</h2>
+          <p>If you have questions about this Privacy Policy, please contact us at:</p>
+          <p class="mt-2"><strong>CFCON</strong><br/>Email: <a href="mailto:c.faysal@cfcon.org" class="text-primary hover:underline">c.faysal@cfcon.org</a><br/>Website: <a href="https://cfcon.org" class="text-primary hover:underline">cfcon.org</a></p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-semibold text-text mb-3">Atlassian Marketplace</h2>
+          <p>Our Apps are distributed through the Atlassian Marketplace and are subject to Atlassian's Marketplace Terms of Service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

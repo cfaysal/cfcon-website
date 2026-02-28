@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AppCard from '../../components/AppCard.astro';
+
+const apps = [
+  {
+    name: 'Scalpel for Jira',
+    platform: 'Jira' as const,
+    description: 'Powerful admin toolkit for Jira. Manage custom fields, workflows, screens, and more — clean up your instance with precision.',
+    href: '/apps/scalpel-jira',
+    icon: '🔬',
+  },
+  {
+    name: 'Scalpel for Confluence',
+    platform: 'Confluence' as const,
+    description: 'Admin toolkit for Confluence. Analyze spaces, clean up content, manage permissions, and keep your wiki in shape.',
+    href: '/apps/scalpel-confluence',
+    icon: '🔬',
+  },
+  {
+    name: 'Legacy URL Scanner for Jira',
+    platform: 'Jira' as const,
+    description: 'Find and replace outdated Jira Server/Data Center URLs across your Cloud instance. Ensure a clean migration.',
+    href: '/apps/legacy-url-scanner-jira',
+    icon: '🔗',
+  },
+  {
+    name: 'Legacy URL Scanner for Confluence',
+    platform: 'Confluence' as const,
+    description: 'Detect and fix legacy URLs in Confluence pages, blogs, and comments after migrating to Cloud.',
+    href: '/apps/legacy-url-scanner-confluence',
+    icon: '🔗',
+  },
+  {
+    name: 'Alchemist for Jira',
+    platform: 'Jira' as const,
+    description: 'Transform and enrich your Jira data. Bulk operations, smart field updates, and workflow automation.',
+    href: '/apps/alchemist-jira',
+    icon: '⚗️',
+  },
+  {
+    name: 'Rank Cascading for Jira',
+    platform: 'Jira' as const,
+    description: 'Cascade ranking from epics to child issues. Keep your backlog priorities aligned across the hierarchy.',
+    href: '/apps/rank-cascading-jira',
+    icon: '📊',
+  },
+];
+---
+
+<Layout title="Apps" description="Atlassian Marketplace Apps by CFCON — Forge apps for Jira and Confluence.">
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h1 class="text-4xl font-bold mb-4">Our Apps</h1>
+      <p class="text-text-light text-lg max-w-2xl mb-12">
+        All our apps are built on Atlassian Forge — your data never leaves your Atlassian instance. Available in Free, Standard, and Advanced editions.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {apps.map((app) => (
+          <AppCard {...app} />
+        ))}
+      </div>
+      <div class="mt-12 p-6 bg-surface rounded-xl border border-border text-center">
+        <p class="text-text-light mb-3">Looking for our apps on the Atlassian Marketplace?</p>
+        <a href="https://marketplace.atlassian.com/vendors/1230468/cfcon" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
+          Visit our Marketplace Vendor Page
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

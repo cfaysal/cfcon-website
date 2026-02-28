@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AppCard from '../components/AppCard.astro';
+
+const apps = [
+  {
+    name: 'Scalpel for Jira',
+    platform: 'Jira' as const,
+    description: 'Powerful admin toolkit for Jira. Manage custom fields, workflows, screens, and more — clean up your instance with precision.',
+    href: '/apps/scalpel-jira',
+    icon: '🔬',
+  },
+  {
+    name: 'Scalpel for Confluence',
+    platform: 'Confluence' as const,
+    description: 'Admin toolkit for Confluence. Analyze spaces, clean up content, manage permissions, and keep your wiki in shape.',
+    href: '/apps/scalpel-confluence',
+    icon: '🔬',
+  },
+  {
+    name: 'Legacy URL Scanner for Jira',
+    platform: 'Jira' as const,
+    description: 'Find and replace outdated Jira Server/Data Center URLs across your Cloud instance. Ensure a clean migration.',
+    href: '/apps/legacy-url-scanner-jira',
+    icon: '🔗',
+  },
+  {
+    name: 'Legacy URL Scanner for Confluence',
+    platform: 'Confluence' as const,
+    description: 'Detect and fix legacy URLs in Confluence pages, blogs, and comments after migrating to Cloud.',
+    href: '/apps/legacy-url-scanner-confluence',
+    icon: '🔗',
+  },
+  {
+    name: 'Alchemist for Jira',
+    platform: 'Jira' as const,
+    description: 'Transform and enrich your Jira data. Bulk operations, smart field updates, and workflow automation.',
+    href: '/apps/alchemist-jira',
+    icon: '⚗️',
+  },
+  {
+    name: 'Rank Cascading for Jira',
+    platform: 'Jira' as const,
+    description: 'Cascade ranking from epics to child issues. Keep your backlog priorities aligned across the hierarchy.',
+    href: '/apps/rank-cascading-jira',
+    icon: '📊',
+  },
+];
+---
+
+<Layout title="Home">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          Atlassian Consulting<br/>& Marketplace Apps
+        </h1>
+        <p class="text-xl text-blue-100 leading-relaxed mb-8">
+          We help organizations get the most out of Jira and Confluence. From expert consulting to purpose-built apps on the Atlassian Marketplace.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/apps" class="inline-flex items-center px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+            Explore our Apps
+          </a>
+          <a href="/contact" class="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors">
+            Get in touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-20 bg-surface">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-4">What we do</h2>
+      <p class="text-text-light text-center max-w-2xl mx-auto mb-12">
+        Two pillars, one goal: making your Atlassian tools work harder for you.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Consulting -->
+        <div class="bg-white border border-border rounded-xl p-8">
+          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <svg width="24" height="24" fill="none" stroke="currentColor" class="text-primary" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Consulting</h3>
+          <p class="text-text-light leading-relaxed mb-4">
+            Process analysis, cloud migrations, infrastructure design, and ongoing support. We optimize your Atlassian setup so your team can focus on what matters.
+          </p>
+          <ul class="space-y-2 text-sm text-text-light">
+            <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Cloud migration & strategy</li>
+            <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Process optimization</li>
+            <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Administration & support</li>
+            <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Training & enablement</li>
+          </ul>
+        </div>
+
+        <!-- Marketplace Apps -->
+        <div class="bg-white border border-border rounded-xl p-8">
+          <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+            <svg width="24" height="24" fill="none" stroke="currentColor" class="text-accent" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="14" y="3" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="3" y="14" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="14" y="14" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Marketplace Apps</h3>
+          <p class="text-text-light leading-relaxed mb-4">
+            Purpose-built Forge apps for Jira and Confluence. Built on Atlassian's secure cloud platform, designed for real-world admin needs.
+          </p>
+          <ul class="space-y-2 text-sm text-text-light">
+            <li class="flex items-center gap-2"><span class="text-accent">&#10003;</span> Runs on Atlassian (Forge)</li>
+            <li class="flex items-center gap-2"><span class="text-accent">&#10003;</span> No external data transfer</li>
+            <li class="flex items-center gap-2"><span class="text-accent">&#10003;</span> Free, Standard & Advanced editions</li>
+            <li class="flex items-center gap-2"><span class="text-accent">&#10003;</span> Jira & Confluence</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps Preview -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-4">Our Apps</h2>
+      <p class="text-text-light text-center max-w-2xl mx-auto mb-12">
+        Admin tools built by Atlassian practitioners, for Atlassian practitioners.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {apps.map((app) => (
+          <AppCard {...app} />
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="https://marketplace.atlassian.com/vendors/1230468/cfcon" target="_blank" rel="noopener" class="text-primary font-medium hover:underline">
+          View all on Atlassian Marketplace &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
