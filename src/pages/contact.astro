@@ -3,83 +3,85 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Contact" description="Get in touch with CFCON for Atlassian consulting and app support.">
-  <section class="py-20">
+  <section class="py-24">
     <div class="max-w-4xl mx-auto px-6">
-      <h1 class="text-4xl font-bold mb-4">Contact us</h1>
-      <p class="text-text-light text-lg mb-12">
-        Have a question about our apps or need Atlassian consulting? We'd love to hear from you.
-      </p>
+      <div class="fade-in mb-14">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact us</h1>
+        <p class="text-text-light text-lg">
+          Have a question about our apps or need Atlassian consulting? We'd love to hear from you.
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- General Contact -->
-        <div class="bg-surface-raised border border-border rounded-xl p-8">
-          <div class="mb-4">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+        <div class="fade-in fade-in-delay-1 glass-card rounded-2xl p-8">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-5 ring-1 ring-primary/20">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h2 class="text-xl font-semibold mb-2">General inquiries</h2>
-          <p class="text-text-light text-sm mb-6">
+          <h2 class="text-xl font-bold mb-2">General inquiries</h2>
+          <p class="text-text-light text-sm mb-6 leading-relaxed">
             For consulting inquiries, partnerships, or general questions — reach out via email.
           </p>
           <a href="mailto:c.faysal@cfcon.org"
-            class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
+            class="btn-glow inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-xl">
             c.faysal@cfcon.org
           </a>
         </div>
 
         <!-- App Support -->
-        <div class="bg-surface-raised border border-border rounded-xl p-8">
-          <div class="mb-4">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+        <div class="fade-in fade-in-delay-2 glass-card rounded-2xl p-8">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-5 ring-1 ring-primary/20">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h2 class="text-xl font-semibold mb-2">App support</h2>
-          <p class="text-text-light text-sm mb-6">
+          <h2 class="text-xl font-bold mb-2">App support</h2>
+          <p class="text-text-light text-sm mb-6 leading-relaxed">
             For app-specific support, bug reports, or feature requests — use our dedicated Service Desk.
           </p>
           <a href="https://cfcon.atlassian.net/servicedesk/customer/portal/4" target="_blank" rel="noopener"
-            class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
+            class="btn-glow inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-xl">
             Open Support Request
           </a>
         </div>
 
         <!-- Marketplace -->
-        <div class="bg-surface-raised border border-border rounded-xl p-8">
-          <div class="mb-4">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+        <div class="fade-in fade-in-delay-1 glass-card rounded-2xl p-8">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-5 ring-1 ring-accent/20">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="text-accent">
               <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h2 class="text-xl font-semibold mb-2">Marketplace</h2>
-          <p class="text-text-light text-sm mb-6">
+          <h2 class="text-xl font-bold mb-2">Marketplace</h2>
+          <p class="text-text-light text-sm mb-6 leading-relaxed">
             Find all our apps, reviews, and documentation on the Atlassian Marketplace.
           </p>
           <a href="https://marketplace.atlassian.com/vendors/69072148" target="_blank" rel="noopener"
-            class="inline-flex items-center px-6 py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors">
+            class="inline-flex items-center px-6 py-3 border border-primary/40 text-primary font-semibold rounded-xl hover:bg-primary hover:text-white transition-all duration-200">
             Visit Marketplace
           </a>
         </div>
 
         <!-- Response Time -->
-        <div class="bg-surface-raised border border-border rounded-xl p-8">
-          <div class="mb-4">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary">
+        <div class="fade-in fade-in-delay-2 glass-card rounded-2xl p-8">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-5 ring-1 ring-accent/20">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" class="text-accent">
               <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h2 class="text-xl font-semibold mb-2">Response time</h2>
-          <p class="text-text-light text-sm mb-4">
+          <h2 class="text-xl font-bold mb-2">Response time</h2>
+          <p class="text-text-light text-sm mb-5 leading-relaxed">
             We typically respond within 1-2 business days. For urgent app issues, please mention "urgent" in your subject line.
           </p>
-          <p class="text-text-light text-sm">
-            <strong class="text-text">Location:</strong> Berg, Thurgau, Switzerland<br/>
-            <strong class="text-text">Timezone:</strong> CET (UTC+1)
-          </p>
+          <div class="text-sm text-text-light space-y-1">
+            <p><span class="text-text font-medium">Location:</span> Berg, Thurgau, Switzerland</p>
+            <p><span class="text-text font-medium">Timezone:</span> CET (UTC+1)</p>
+          </div>
         </div>
       </div>
     </div>

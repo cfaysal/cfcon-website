@@ -13,21 +13,26 @@ interface Props {
 }
 
 const { name, platform, tagline, description, features, marketplaceUrl, icon, comingSoon = false } = Astro.props;
-const platformColor = platform === 'Jira' ? 'bg-blue-900/50 text-blue-300' : 'bg-teal-900/50 text-teal-300';
+const platformColor = platform === 'Jira' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' : 'bg-teal-500/10 text-teal-400 border-teal-500/20';
 ---
 
 <Layout title={name} description={tagline}>
-  <section class="py-20">
+  <section class="py-24">
     <div class="max-w-4xl mx-auto px-6">
       <!-- Header -->
-      <div class="mb-12">
-        <a href="/apps" class="text-sm text-text-light hover:text-primary transition-colors mb-4 inline-block">&larr; All Apps</a>
-        <div class="flex items-center gap-4 mb-4">
-          <img src={icon} alt={name} class="w-16 h-16 rounded-xl" />
+      <div class="mb-14 fade-in">
+        <a href="/apps" class="inline-flex items-center gap-1 text-sm text-text-light hover:text-primary transition-colors mb-6">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          All Apps
+        </a>
+        <div class="flex items-center gap-5 mb-4">
+          <div class="w-16 h-16 rounded-2xl overflow-hidden ring-1 ring-white/10 flex-shrink-0">
+            <img src={icon} alt={name} class="w-16 h-16" />
+          </div>
           <div>
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 flex-wrap">
               <h1 class="text-3xl md:text-4xl font-bold">{name}</h1>
-              <span class={`text-sm font-medium px-3 py-1 rounded-full ${platformColor}`}>{platform}</span>
+              <span class={`text-sm font-medium px-3 py-1 rounded-full border ${platformColor}`}>{platform}</span>
             </div>
             <p class="text-text-light text-lg mt-1">{tagline}</p>
           </div>
@@ -35,17 +40,19 @@ const platformColor = platform === 'Jira' ? 'bg-blue-900/50 text-blue-300' : 'bg
       </div>
 
       <!-- Description -->
-      <div class="mb-12">
+      <div class="mb-14 fade-in">
         <p class="text-text-light leading-relaxed text-lg">{description}</p>
       </div>
 
       <!-- Features -->
-      <div class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Features</h2>
+      <div class="mb-14 fade-in">
+        <h2 class="text-2xl font-bold mb-6">Features</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           {features.map((feature) => (
-            <div class="flex items-start gap-3 bg-surface border border-border rounded-lg p-4">
-              <span class="text-primary mt-0.5">&#10003;</span>
+            <div class="flex items-start gap-3 glass-card rounded-xl p-4">
+              <span class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 ring-1 ring-primary/20">
+                <span class="text-primary text-xs">&#10003;</span>
+              </span>
               <span class="text-sm text-text">{feature}</span>
             </div>
           ))}
@@ -53,21 +60,21 @@ const platformColor = platform === 'Jira' ? 'bg-blue-900/50 text-blue-300' : 'bg
       </div>
 
       <!-- Editions -->
-      <div class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Editions</h2>
+      <div class="mb-14 fade-in">
+        <h2 class="text-2xl font-bold mb-6">Editions</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="bg-surface-raised border border-border rounded-xl p-6">
-            <h3 class="font-semibold text-lg mb-2">Free</h3>
-            <p class="text-text-light text-sm">Get started with core features at no cost. Perfect for evaluating the app.</p>
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Free</h3>
+            <p class="text-text-light text-sm leading-relaxed">Get started with core features at no cost. Perfect for evaluating the app.</p>
           </div>
-          <div class="bg-surface-raised border-2 border-primary rounded-xl p-6 relative">
-            <span class="absolute -top-3 left-4 bg-primary text-white text-xs font-medium px-2 py-0.5 rounded-full">Popular</span>
-            <h3 class="font-semibold text-lg mb-2">Standard</h3>
-            <p class="text-text-light text-sm">Expanded limits and additional features for growing teams.</p>
+          <div class="glass-card rounded-2xl p-6 !border-primary/40 relative">
+            <span class="absolute -top-3 left-4 bg-primary text-white text-xs font-semibold px-3 py-0.5 rounded-full shadow-lg shadow-primary/20">Popular</span>
+            <h3 class="font-bold text-lg mb-2">Standard</h3>
+            <p class="text-text-light text-sm leading-relaxed">Expanded limits and additional features for growing teams.</p>
           </div>
-          <div class="bg-surface-raised border border-border rounded-xl p-6">
-            <h3 class="font-semibold text-lg mb-2">Advanced</h3>
-            <p class="text-text-light text-sm">Full feature set with highest limits for enterprise-scale usage.</p>
+          <div class="glass-card rounded-2xl p-6">
+            <h3 class="font-bold text-lg mb-2">Advanced</h3>
+            <p class="text-text-light text-sm leading-relaxed">Full feature set with highest limits for enterprise-scale usage.</p>
           </div>
         </div>
       </div>
@@ -77,20 +84,20 @@ const platformColor = platform === 'Jira' ? 'bg-blue-900/50 text-blue-300' : 'bg
 
       <!-- CTA -->
       {comingSoon ? (
-        <div class="bg-amber-900/10 border border-amber-500/30 rounded-xl p-8 text-center">
-          <h2 class="text-xl font-semibold mb-3">Coming Soon</h2>
+        <div class="fade-in glass-card rounded-2xl p-10 text-center !border-amber-500/20">
+          <h2 class="text-xl font-bold mb-3">Coming Soon</h2>
           <p class="text-text-light mb-6">{name} is currently in Marketplace review and will be available soon.</p>
           <a href="/contact"
-            class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
+            class="btn-glow inline-flex items-center px-7 py-3.5 bg-primary text-white font-semibold rounded-xl">
             Get notified
           </a>
         </div>
       ) : (
-        <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center">
-          <h2 class="text-xl font-semibold mb-3">Ready to get started?</h2>
+        <div class="fade-in glass-card rounded-2xl p-10 text-center !border-primary/20">
+          <h2 class="text-xl font-bold mb-3">Ready to get started?</h2>
           <p class="text-text-light mb-6">Install {name} from the Atlassian Marketplace.</p>
           <a href={marketplaceUrl} target="_blank" rel="noopener"
-            class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
+            class="btn-glow inline-flex items-center px-7 py-3.5 bg-primary text-white font-semibold rounded-xl">
             Get it on Marketplace
           </a>
         </div>

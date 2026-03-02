@@ -9,22 +9,22 @@ const navItems = [
 ];
 ---
 
-<header class="bg-surface-dark border-b border-border sticky top-0 z-50">
+<header class="bg-surface-dark/80 backdrop-blur-xl border-b border-white/5 sticky top-0 z-50">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2">
       <img src="/logo.png" alt="CFCON Consulting" class="h-10" />
     </a>
 
     <!-- Desktop Nav -->
-    <div class="hidden md:flex items-center gap-8">
+    <div class="hidden md:flex items-center gap-1">
       {navItems.map((item) => (
         <a
           href={item.href}
           class:list={[
-            'text-sm font-medium transition-colors hover:text-primary',
+            'text-sm font-medium px-4 py-2 rounded-lg transition-all duration-200',
             currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href))
-              ? 'text-primary'
-              : 'text-text-light'
+              ? 'text-primary bg-primary/10'
+              : 'text-text-light hover:text-text hover:bg-white/5'
           ]}
         >
           {item.label}
@@ -33,7 +33,7 @@ const navItems = [
     </div>
 
     <!-- Mobile Menu Button -->
-    <button id="mobile-menu-btn" class="md:hidden p-2 text-text-light hover:text-primary" aria-label="Menu">
+    <button id="mobile-menu-btn" class="md:hidden p-2 text-text-light hover:text-primary transition-colors" aria-label="Menu">
       <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
       </svg>
@@ -41,14 +41,16 @@ const navItems = [
   </nav>
 
   <!-- Mobile Nav -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface-dark">
-    <div class="px-6 py-4 flex flex-col gap-4">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-surface-dark/95 backdrop-blur-xl">
+    <div class="px-6 py-4 flex flex-col gap-1">
       {navItems.map((item) => (
         <a
           href={item.href}
           class:list={[
-            'text-sm font-medium transition-colors hover:text-primary',
-            currentPath === item.href ? 'text-primary' : 'text-text-light'
+            'text-sm font-medium px-4 py-2.5 rounded-lg transition-all duration-200',
+            currentPath === item.href
+              ? 'text-primary bg-primary/10'
+              : 'text-text-light hover:text-text hover:bg-white/5'
           ]}
         >
           {item.label}

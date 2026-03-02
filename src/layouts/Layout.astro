@@ -18,13 +18,29 @@ const { title, description = 'CFCON - Atlassian Consulting & Marketplace Apps' }
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <title>{title} | CFCON</title>
   </head>
-  <body class="bg-surface-dark text-text min-h-screen flex flex-col antialiased">
+  <body class="bg-surface-dark text-text min-h-screen flex flex-col antialiased font-sans">
     <Header />
     <main class="flex-1">
       <slot />
     </main>
     <Footer />
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+      document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>

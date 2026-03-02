@@ -51,20 +51,25 @@ const apps = [
 ---
 
 <Layout title="Apps" description="Atlassian Marketplace Apps by CFCON — Forge apps for Jira and Confluence.">
-  <section class="py-20">
+  <section class="py-24">
     <div class="max-w-6xl mx-auto px-6">
-      <h1 class="text-4xl font-bold mb-4">Our Apps</h1>
-      <p class="text-text-light text-lg max-w-2xl mb-12">
-        All our apps are built on Atlassian Forge — your data never leaves your Atlassian instance. Available in Free, Standard, and Advanced editions.
-      </p>
+      <div class="fade-in mb-14">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Apps</h1>
+        <p class="text-text-light text-lg max-w-2xl">
+          All our apps are built on Atlassian Forge — your data never leaves your Atlassian instance. Available in Free, Standard, and Advanced editions.
+        </p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {apps.map((app) => (
-          <AppCard {...app} />
+        {apps.map((app, i) => (
+          <div class:list={['fade-in', i % 2 === 0 ? 'fade-in-delay-1' : 'fade-in-delay-2']}>
+            <AppCard {...app} />
+          </div>
         ))}
       </div>
-      <div class="mt-12 p-6 bg-surface rounded-xl border border-border text-center">
-        <p class="text-text-light mb-3">Looking for our apps on the Atlassian Marketplace?</p>
-        <a href="https://marketplace.atlassian.com/vendors/69072148" target="_blank" rel="noopener" class="inline-flex items-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-colors">
+      <div class="mt-14 fade-in glass-card rounded-2xl p-8 text-center">
+        <p class="text-text-light mb-4">Looking for our apps on the Atlassian Marketplace?</p>
+        <a href="https://marketplace.atlassian.com/vendors/69072148" target="_blank" rel="noopener"
+          class="btn-glow inline-flex items-center px-7 py-3.5 bg-primary text-white font-semibold rounded-xl">
           Visit our Marketplace Vendor Page
         </a>
       </div>

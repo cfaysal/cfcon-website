@@ -3,79 +3,93 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="About" description="About CFCON — Atlassian Consulting and Marketplace App development.">
-  <section class="py-20">
+  <section class="py-24">
     <div class="max-w-4xl mx-auto px-6">
-      <h1 class="text-4xl font-bold mb-8">About CFCON</h1>
+      <div class="fade-in mb-10">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">About CFCON</h1>
+        <p class="text-lg text-text-light leading-relaxed">
+          CFCON is an Atlassian-focused consulting firm and software vendor. We combine hands-on Atlassian expertise with purpose-built apps to help organizations work more effectively.
+        </p>
+      </div>
 
-      <div class="prose max-w-none">
-        <div class="space-y-6 text-text-light leading-relaxed">
-          <p class="text-lg">
-            CFCON is an Atlassian-focused consulting firm and software vendor. We combine hands-on Atlassian expertise with purpose-built apps to help organizations work more effectively.
-          </p>
+      <div class="flex flex-wrap gap-3 my-10 fade-in">
+        <span class="badge-shimmer inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-sm font-medium text-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 5.143L5.143 11.571l6.428 6.429 6.429-6.429-6.429-6.428zm0-2.857L18.857 9.57l-7.286 7.286L4.286 9.571 11.571 2.286z"/></svg>
+          Atlassian Partner
+        </span>
+        <span class="badge-shimmer inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-sm font-medium text-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Certified Professional
+        </span>
+        <span class="badge-shimmer inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-sm font-medium text-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Marketplace Vendor
+        </span>
+      </div>
 
-          <div class="flex flex-wrap gap-3 my-8">
-            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-sm font-medium text-primary">
-              Atlassian Partner
-            </span>
-            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-sm font-medium text-primary">
-              Atlassian Certified Professional
-            </span>
-            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-sm font-medium text-primary">
-              Atlassian Marketplace Vendor
-            </span>
+      <div class="glass-card rounded-2xl p-8 md:p-10 my-12 fade-in">
+        <h2 class="text-2xl font-bold text-text mb-8">What drives us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 ring-1 ring-primary/20">
+              <svg width="20" height="20" fill="none" stroke="currentColor" class="text-primary" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-semibold text-text mb-2">Practitioner mindset</h3>
+            <p class="text-sm text-text-light leading-relaxed">We build tools we use ourselves. Every app comes from real pain points we've encountered in production Atlassian environments.</p>
           </div>
-
-          <div class="bg-surface border border-border rounded-xl p-8 my-10">
-            <h2 class="text-2xl font-semibold text-text mb-6">What drives us</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h3 class="font-semibold text-text mb-2">Practitioner mindset</h3>
-                <p class="text-sm">We build tools we use ourselves. Every app comes from real pain points we've encountered in production Atlassian environments.</p>
-              </div>
-              <div>
-                <h3 class="font-semibold text-text mb-2">Security first</h3>
-                <p class="text-sm">All our apps run on Atlassian Forge. No external servers, no data leaving your instance. Your data stays yours.</p>
-              </div>
-              <div>
-                <h3 class="font-semibold text-text mb-2">Keep it simple</h3>
-                <p class="text-sm">We don't over-engineer. Our tools solve specific problems well, without unnecessary complexity or feature bloat.</p>
-              </div>
-              <div>
-                <h3 class="font-semibold text-text mb-2">Continuous improvement</h3>
-                <p class="text-sm">Every app is actively maintained and improved based on real customer feedback and evolving Atlassian platform capabilities.</p>
-              </div>
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 ring-1 ring-primary/20">
+              <svg width="20" height="20" fill="none" stroke="currentColor" class="text-primary" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
+            <h3 class="font-semibold text-text mb-2">Security first</h3>
+            <p class="text-sm text-text-light leading-relaxed">All our apps run on Atlassian Forge. No external servers, no data leaving your instance. Your data stays yours.</p>
           </div>
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-3 ring-1 ring-accent/20">
+              <svg width="20" height="20" fill="none" stroke="currentColor" class="text-accent" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-semibold text-text mb-2">Keep it simple</h3>
+            <p class="text-sm text-text-light leading-relaxed">We don't over-engineer. Our tools solve specific problems well, without unnecessary complexity or feature bloat.</p>
+          </div>
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-3 ring-1 ring-accent/20">
+              <svg width="20" height="20" fill="none" stroke="currentColor" class="text-accent" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 6h6v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="font-semibold text-text mb-2">Continuous improvement</h3>
+            <p class="text-sm text-text-light leading-relaxed">Every app is actively maintained and improved based on real customer feedback and evolving Atlassian platform capabilities.</p>
+          </div>
+        </div>
+      </div>
 
-          <h2 class="text-2xl font-semibold text-text mt-10 mb-4">Our expertise</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-surface-raised border border-border rounded-lg p-5">
-              <h3 class="font-semibold text-text mb-2">Consulting</h3>
-              <ul class="text-sm space-y-1">
-                <li>Cloud migration</li>
-                <li>Process optimization</li>
-                <li>Infrastructure design</li>
-                <li>Ongoing administration</li>
-              </ul>
-            </div>
-            <div class="bg-surface-raised border border-border rounded-lg p-5">
-              <h3 class="font-semibold text-text mb-2">Development</h3>
-              <ul class="text-sm space-y-1">
-                <li>Atlassian Forge apps</li>
-                <li>Custom integrations</li>
-                <li>Workflow automation</li>
-                <li>API development</li>
-              </ul>
-            </div>
-            <div class="bg-surface-raised border border-border rounded-lg p-5">
-              <h3 class="font-semibold text-text mb-2">Support</h3>
-              <ul class="text-sm space-y-1">
-                <li>Service desk operations</li>
-                <li>System maintenance</li>
-                <li>Updates & migrations</li>
-                <li>Team training</li>
-              </ul>
-            </div>
+      <div class="fade-in">
+        <h2 class="text-2xl font-bold text-text mb-6">Our expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div class="glass-card rounded-xl p-6">
+            <h3 class="font-semibold text-text mb-3">Consulting</h3>
+            <ul class="text-sm text-text-light space-y-2">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Cloud migration</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Process optimization</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Infrastructure design</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>Ongoing administration</li>
+            </ul>
+          </div>
+          <div class="glass-card rounded-xl p-6">
+            <h3 class="font-semibold text-text mb-3">Development</h3>
+            <ul class="text-sm text-text-light space-y-2">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>Atlassian Forge apps</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>Custom integrations</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>Workflow automation</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>API development</li>
+            </ul>
+          </div>
+          <div class="glass-card rounded-xl p-6">
+            <h3 class="font-semibold text-text mb-3">Support</h3>
+            <ul class="text-sm text-text-light space-y-2">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-light flex-shrink-0"></span>Service desk operations</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-light flex-shrink-0"></span>System maintenance</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-light flex-shrink-0"></span>Updates & migrations</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-primary-light flex-shrink-0"></span>Team training</li>
+            </ul>
           </div>
         </div>
       </div>

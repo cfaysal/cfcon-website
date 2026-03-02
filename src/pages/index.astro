@@ -52,33 +52,33 @@ const apps = [
 
 <Layout title="Home">
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <img src="/logo.png" alt="CFCON Consulting" class="h-40 md:h-56 mx-auto mb-10" />
-      <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
-        Atlassian Consulting<br/>& Marketplace Apps
+  <section class="hero-glow bg-gradient-to-b from-primary-dark via-primary-dark to-surface-dark text-white py-24 md:py-32">
+    <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+      <img src="/logo.png" alt="CFCON Consulting" class="h-36 md:h-52 mx-auto mb-10 drop-shadow-2xl" />
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+        Atlassian Consulting<br/><span class="gradient-text">& Marketplace Apps</span>
       </h1>
-      <p class="text-xl text-blue-100 leading-relaxed mb-8 max-w-2xl mx-auto">
+      <p class="text-lg md:text-xl text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
         We help organizations get the most out of Jira and Confluence. From expert consulting to purpose-built apps on the Atlassian Marketplace.
       </p>
-      <div class="flex flex-wrap gap-4 justify-center mb-10">
-        <a href="/apps" class="inline-flex items-center px-6 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+      <div class="flex flex-wrap gap-4 justify-center mb-12">
+        <a href="/apps" class="btn-glow inline-flex items-center px-7 py-3.5 bg-primary text-white font-semibold rounded-xl transition-colors">
           Explore our Apps
         </a>
-        <a href="/contact" class="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors">
+        <a href="/contact" class="btn-outline-glow inline-flex items-center px-7 py-3.5 border border-white/25 text-white font-semibold rounded-xl">
           Get in touch
         </a>
       </div>
       <div class="flex flex-wrap gap-3 justify-center">
-        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 bg-white/10 text-sm font-medium">
+        <span class="badge-shimmer inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-medium backdrop-blur-sm">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 5.143L5.143 11.571l6.428 6.429 6.429-6.429-6.429-6.428zm0-2.857L18.857 9.57l-7.286 7.286L4.286 9.571 11.571 2.286z"/><path d="M11.571 5.143l-6.428 6.428h12.857l-6.429-6.428z" opacity=".4"/></svg>
           Atlassian Partner
         </span>
-        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 bg-white/10 text-sm font-medium">
+        <span class="badge-shimmer inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-medium backdrop-blur-sm">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Atlassian Certified Professional
+          Certified Professional
         </span>
-        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/30 bg-white/10 text-sm font-medium">
+        <span class="badge-shimmer inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-medium backdrop-blur-sm">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Runs on Atlassian
         </span>
@@ -87,35 +87,37 @@ const apps = [
   </section>
 
   <!-- Services Overview -->
-  <section class="py-20 bg-surface">
+  <section class="py-24 bg-surface dot-pattern">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-4">What we do</h2>
-      <p class="text-text-light text-center max-w-2xl mx-auto mb-12">
-        Two pillars, one goal: making your Atlassian tools work harder for you.
-      </p>
+      <div class="text-center mb-14 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">What we do</h2>
+        <p class="text-text-light max-w-2xl mx-auto text-lg">
+          Two pillars, one goal: making your Atlassian tools work harder for you.
+        </p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Consulting -->
-        <div class="bg-surface-raised border border-border rounded-xl p-8">
-          <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+        <div class="fade-in fade-in-delay-1 glass-card rounded-2xl p-8">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5 ring-1 ring-primary/20">
             <svg width="24" height="24" fill="none" stroke="currentColor" class="text-primary" stroke-width="2">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Consulting</h3>
-          <p class="text-text-light leading-relaxed mb-4">
+          <h3 class="text-xl font-bold mb-3">Consulting</h3>
+          <p class="text-text-light leading-relaxed mb-5">
             Process analysis, cloud migrations, infrastructure design, and ongoing support. We optimize your Atlassian setup so your team can focus on what matters.
           </p>
-          <ul class="space-y-2 text-sm text-text-light">
-            <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Cloud migration & strategy</li>
-            <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Process optimization</li>
-            <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Administration & support</li>
-            <li class="flex items-center gap-2"><span class="text-primary">&#10003;</span> Training & enablement</li>
+          <ul class="space-y-2.5 text-sm text-text-light">
+            <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="text-primary text-xs">&#10003;</span></span> Cloud migration & strategy</li>
+            <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="text-primary text-xs">&#10003;</span></span> Process optimization</li>
+            <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="text-primary text-xs">&#10003;</span></span> Administration & support</li>
+            <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="text-primary text-xs">&#10003;</span></span> Training & enablement</li>
           </ul>
         </div>
 
         <!-- Marketplace Apps -->
-        <div class="bg-surface-raised border border-border rounded-xl p-8">
-          <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+        <div class="fade-in fade-in-delay-2 glass-card rounded-2xl p-8">
+          <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5 ring-1 ring-accent/20">
             <svg width="24" height="24" fill="none" stroke="currentColor" class="text-accent" stroke-width="2">
               <rect x="3" y="3" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
               <rect x="14" y="3" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
@@ -123,36 +125,43 @@ const apps = [
               <rect x="14" y="14" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Marketplace Apps</h3>
-          <p class="text-text-light leading-relaxed mb-4">
+          <h3 class="text-xl font-bold mb-3">Marketplace Apps</h3>
+          <p class="text-text-light leading-relaxed mb-5">
             Purpose-built Forge apps for Jira and Confluence. Built on Atlassian's secure cloud platform, designed for real-world admin needs.
           </p>
-          <ul class="space-y-2 text-sm text-text-light">
-            <li class="flex items-center gap-2"><span class="text-accent">&#10003;</span> Runs on Atlassian (Forge)</li>
-            <li class="flex items-center gap-2"><span class="text-accent">&#10003;</span> No external data transfer</li>
-            <li class="flex items-center gap-2"><span class="text-accent">&#10003;</span> Free, Standard & Advanced editions</li>
-            <li class="flex items-center gap-2"><span class="text-accent">&#10003;</span> Jira & Confluence</li>
+          <ul class="space-y-2.5 text-sm text-text-light">
+            <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0"><span class="text-accent text-xs">&#10003;</span></span> Runs on Atlassian (Forge)</li>
+            <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0"><span class="text-accent text-xs">&#10003;</span></span> No external data transfer</li>
+            <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0"><span class="text-accent text-xs">&#10003;</span></span> Free, Standard & Advanced editions</li>
+            <li class="flex items-center gap-2.5"><span class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0"><span class="text-accent text-xs">&#10003;</span></span> Jira & Confluence</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <div class="section-divider"></div>
+
   <!-- Apps Preview -->
-  <section class="py-20">
+  <section class="py-24">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-4">Our Apps</h2>
-      <p class="text-text-light text-center max-w-2xl mx-auto mb-12">
-        Admin tools built by Atlassian practitioners, for Atlassian practitioners.
-      </p>
+      <div class="text-center mb-14 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Apps</h2>
+        <p class="text-text-light max-w-2xl mx-auto text-lg">
+          Admin tools built by Atlassian practitioners, for Atlassian practitioners.
+        </p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {apps.map((app) => (
-          <AppCard {...app} />
+        {apps.map((app, i) => (
+          <div class:list={['fade-in', i % 2 === 0 ? 'fade-in-delay-1' : 'fade-in-delay-2']}>
+            <AppCard {...app} />
+          </div>
         ))}
       </div>
-      <div class="text-center mt-10">
-        <a href="https://marketplace.atlassian.com/vendors/69072148" target="_blank" rel="noopener" class="text-primary font-medium hover:underline">
-          View all on Atlassian Marketplace &rarr;
+      <div class="text-center mt-12 fade-in">
+        <a href="https://marketplace.atlassian.com/vendors/69072148" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-primary font-medium hover:underline underline-offset-4 transition-colors">
+          View all on Atlassian Marketplace
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5-5-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
     </div>
