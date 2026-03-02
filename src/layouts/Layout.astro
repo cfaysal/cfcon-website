@@ -29,6 +29,10 @@ const { title, description = 'CFCON - Atlassian Consulting & Marketplace Apps' }
       <slot />
     </main>
     <Footer />
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox">
+      <img src="" alt="" id="lightbox-img" />
+    </div>
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
@@ -41,6 +45,21 @@ const { title, description = 'CFCON - Atlassian Consulting & Marketplace Apps' }
         { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
       );
       document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+      // Lightbox
+      const overlay = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      document.querySelectorAll('.lightbox-trigger').forEach((img) => {
+        img.addEventListener('click', () => {
+          lbImg.src = img.src;
+          lbImg.alt = img.alt;
+          overlay.classList.add('active');
+        });
+      });
+      overlay?.addEventListener('click', () => overlay.classList.remove('active'));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') overlay?.classList.remove('active');
+      });
     </script>
   </body>
 </html>
