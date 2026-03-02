@@ -31,4 +31,38 @@ import InsightPage from '../../layouts/InsightPage.astro';
     { title: 'Review & Replace', description: 'Preview the planned replacements in dry-run mode. Once satisfied, execute the bulk replacement to convert legacy URLs to Cloud Smart Links.' },
     { title: 'Verify & Monitor', description: 'Check the audit report to confirm successful replacements. Set up recurring scans to catch any new legacy URLs from restored backups or imports.' },
   ]}
-/>
+>
+  <!-- Native Atlassian approach -->
+  <div class="mb-14 fade-in">
+    <h2 class="text-2xl font-bold mb-4">What About Atlassian's Native Approach?</h2>
+    <p class="text-text-light leading-relaxed text-lg mb-6">
+      Atlassian offers a built-in <strong class="text-text">Product Links</strong> feature (via the Link Migration Service) in
+      <a href="https://community.atlassian.com/forums/Atlassian-Migration-Program/Update-Jira-and-Confluence-links-after-server-to-cloud-migration/ba-p/2507494" target="_blank" rel="noopener" class="text-primary hover:underline">admin.atlassian.com</a>
+      that can update cross-product links (Jira ↔ Confluence) after migration. It works by mapping pre- and post-migration URLs based on the migration log.
+    </p>
+    <div class="glass-card rounded-2xl p-6 md:p-8 mb-6">
+      <h3 class="font-semibold text-text mb-4">Limitations of the native approach</h3>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0 mt-2.5"></span>
+          <span class="text-text-light leading-relaxed">Only works for migrations done via the official Atlassian Migration Assistant — manually imported content is not covered.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0 mt-2.5"></span>
+          <span class="text-text-light leading-relaxed">Limited to cross-product links (Jira ↔ Confluence). Does not scan free-text URLs in descriptions, comments, or custom fields.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0 mt-2.5"></span>
+          <span class="text-text-light leading-relaxed">Confluence task updates may trigger edit notifications to mentioned users.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0 mt-2.5"></span>
+          <span class="text-text-light leading-relaxed">No dry-run mode or granular control over which replacements are applied.</span>
+        </li>
+      </ul>
+    </div>
+    <p class="text-text-light leading-relaxed">
+      Legacy URL Scanner complements this by catching everything the native tool misses: free-text URLs in issue fields, links to external legacy systems, and content from non-standard migration paths.
+    </p>
+  </div>
+</InsightPage>
