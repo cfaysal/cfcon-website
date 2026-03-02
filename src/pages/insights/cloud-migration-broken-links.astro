@@ -1,0 +1,34 @@
+---
+import InsightPage from '../../layouts/InsightPage.astro';
+---
+
+<InsightPage
+  title="Broken Links After Cloud Migration"
+  description="Why thousands of links break after every Server-to-Cloud migration — and how to find and fix them before users notice."
+  appName="Legacy URL Scanner for Jira"
+  appIcon="/icon-legacy-url-scanner.png"
+  appHref="/apps/legacy-url-scanner-jira"
+  marketplaceUrl="https://marketplace.atlassian.com/apps/72889190/legacy-url-scanner-for-jira"
+  problem="After every Jira Server or Data Center to Cloud migration, thousands of links embedded in issue descriptions, comments, and custom fields still point to the old server URL. Atlassian's migration tools move the data but don't rewrite these internal references. The result: a cloud instance full of dead links that frustrate users and undermine trust in the migration."
+  painPoints={[
+    'User frustration: Team members click links daily and hit dead pages or login screens for a server that no longer exists.',
+    `Support overhead: IT helpdesks are flooded with "this link doesn't work" tickets that all trace back to the same root cause.`,
+    'Governance risk: When the old server domain is eventually decommissioned, every remaining legacy link becomes permanently broken.',
+    'Manual fix is impractical: With thousands of issues containing legacy URLs, manually finding and updating each one would take weeks of tedious work.',
+  ]}
+  solutionIntro="We encountered this in nearly every cloud migration project. Clients would celebrate a successful migration, only to discover the broken link problem weeks later. That's why we built Legacy URL Scanner — to automatically detect and replace outdated server URLs with their correct cloud equivalents."
+  keyFeatures={[
+    'Automatic URL Detection: Scans issue descriptions, comments, and custom fields for legacy Server/DC URLs using configurable domain patterns.',
+    'Smart Link Replacement: Converts old URLs to Atlassian Cloud Smart Links that resolve correctly and show rich previews.',
+    'Governance Rules: Define which domains to scan for and how replacements should be handled — with approval workflows for sensitive content.',
+    'Bulk Operations: Process thousands of issues in a single run, with progress tracking and detailed reports.',
+    'Dry Run Mode: Preview all planned replacements before committing changes, ensuring nothing unexpected gets modified.',
+    'Audit Trail: Full log of every replacement made, who triggered it, and when — for compliance and rollback purposes.',
+  ]}
+  steps={[
+    { title: 'Configure Legacy Domains', description: 'Enter your old Jira Server or Data Center URLs. The scanner will use these patterns to identify legacy links across your instance.' },
+    { title: 'Run a Scan', description: 'The scanner analyzes all issues, comments, and supported custom fields. Results show exactly which issues contain legacy URLs and how many.' },
+    { title: 'Review & Replace', description: 'Preview the planned replacements in dry-run mode. Once satisfied, execute the bulk replacement to convert legacy URLs to Cloud Smart Links.' },
+    { title: 'Verify & Monitor', description: 'Check the audit report to confirm successful replacements. Set up recurring scans to catch any new legacy URLs from restored backups or imports.' },
+  ]}
+/>

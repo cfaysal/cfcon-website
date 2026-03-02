@@ -48,9 +48,21 @@ const apps = [
     icon: '/icon-rank-cascading.png',
   },
 ];
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'CFCON',
+  url: 'https://cfcon.org',
+  logo: 'https://cfcon.org/logo.png',
+  description: 'Atlassian Consulting & Marketplace Apps. We help teams optimize their workflows and get the most out of the Atlassian ecosystem.',
+  sameAs: [
+    'https://marketplace.atlassian.com/vendors/69072148',
+  ],
+};
 ---
 
-<Layout title="Home">
+<Layout title="Home" jsonLd={organizationJsonLd}>
   <!-- Hero -->
   <section class="hero-glow bg-gradient-to-b from-primary-dark via-primary-dark to-surface-dark text-white py-28 md:py-36">
     <!-- Floating orbs -->

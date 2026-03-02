@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cfcon.org/sitemap-index.xml

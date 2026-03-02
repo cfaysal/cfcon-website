@@ -1,0 +1,135 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  appName: string;
+  appIcon: string;
+  appHref: string;
+  marketplaceUrl: string;
+  problem: string;
+  painPoints: string[];
+  solutionIntro: string;
+  keyFeatures: string[];
+  steps: { title: string; description: string }[];
+}
+
+const { title, description, appName, appIcon, appHref, marketplaceUrl, problem, painPoints, solutionIntro, keyFeatures, steps } = Astro.props;
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  author: {
+    '@type': 'Organization',
+    name: 'CFCON',
+    url: 'https://cfcon.org',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'CFCON',
+    logo: { '@type': 'ImageObject', url: 'https://cfcon.org/logo.png' },
+  },
+};
+---
+
+<Layout title={title} description={description} ogImage={appIcon} ogType="article" jsonLd={articleJsonLd}>
+  <section class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <!-- Back link -->
+      <div class="mb-14 fade-in">
+        <a href="/insights" class="inline-flex items-center gap-1 text-sm text-text-light hover:text-primary transition-colors mb-6">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          All Insights
+        </a>
+        <div class="flex items-center gap-5 mb-4">
+          <div class="w-16 h-16 rounded-2xl overflow-hidden ring-1 ring-white/10 flex-shrink-0">
+            <img src={appIcon} alt={appName} class="w-16 h-16" />
+          </div>
+          <div>
+            <h1 class="text-3xl md:text-4xl font-bold">{title}</h1>
+            <p class="text-text-light text-lg mt-1">{description}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. The Problem -->
+      <div class="mb-14 fade-in">
+        <h2 class="text-2xl font-bold mb-4">The Problem</h2>
+        <p class="text-text-light leading-relaxed text-lg">{problem}</p>
+      </div>
+
+      <!-- 2. The Pain -->
+      <div class="mb-14 fade-in">
+        <h2 class="text-2xl font-bold mb-6">The Pain</h2>
+        <div class="glass-card rounded-2xl p-6 md:p-8">
+          <ul class="space-y-4">
+            {painPoints.map((point) => (
+              <li class="flex items-start gap-3">
+                <span class="w-5 h-5 rounded-full bg-red-500/10 flex items-center justify-center flex-shrink-0 mt-0.5 ring-1 ring-red-500/20">
+                  <svg width="12" height="12" fill="none" stroke="currentColor" class="text-red-400" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="text-text-light leading-relaxed">{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. Our Solution -->
+      <div class="mb-14 fade-in">
+        <h2 class="text-2xl font-bold mb-4">Our Solution: {appName}</h2>
+        <p class="text-text-light leading-relaxed text-lg mb-6">{solutionIntro}</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {keyFeatures.map((feature) => (
+            <div class="flex items-start gap-3 glass-card rounded-xl p-4">
+              <span class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 ring-1 ring-primary/20">
+                <span class="text-primary text-xs">&#10003;</span>
+              </span>
+              <span class="text-sm text-text">{feature}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- 4. How It Works -->
+      <div class="mb-14 fade-in">
+        <h2 class="text-2xl font-bold mb-6">How It Works</h2>
+        <div class="space-y-4">
+          {steps.map((step, i) => (
+            <div class="glass-card rounded-xl p-5 flex items-start gap-4">
+              <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 ring-1 ring-primary/20 font-mono font-bold text-primary text-sm">
+                {i + 1}
+              </span>
+              <div>
+                <h3 class="font-semibold text-text mb-1">{step.title}</h3>
+                <p class="text-text-light text-sm leading-relaxed">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Extra content slot -->
+      <slot />
+
+      <!-- 5. CTA -->
+      <div class="fade-in glass-card rounded-2xl p-10 text-center !border-primary/20">
+        <h2 class="text-xl font-bold mb-3">Ready to solve this?</h2>
+        <p class="text-text-light mb-6">Learn more about {appName} or install it directly from the Atlassian Marketplace.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href={appHref}
+            class="btn-glow inline-flex items-center px-7 py-3.5 bg-primary text-white font-semibold rounded-xl">
+            View {appName}
+          </a>
+          <a href={marketplaceUrl} target="_blank" rel="noopener"
+            class="btn-outline-glow inline-flex items-center px-7 py-3.5 border border-white/20 text-white font-semibold rounded-xl">
+            Get it on Marketplace
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,34 @@
+---
+import InsightPage from '../../layouts/InsightPage.astro';
+---
+
+<InsightPage
+  title="Jira Instance Hygiene"
+  description="How years of unchecked growth turn Jira instances into admin nightmares — and how systematic scanning brings them back under control."
+  appName="Scalpel for Jira"
+  appIcon="/icon-scalpel-jira.png"
+  appHref="/apps/scalpel-jira"
+  marketplaceUrl="https://marketplace.atlassian.com/apps/1522073931/scalpel-for-jira"
+  problem="Over years of use, Jira instances accumulate hundreds of unused custom fields, broken workflows, orphaned schemes, and forgotten permission configurations. Every new project adds complexity, but nothing ever gets cleaned up. What starts as a well-structured instance gradually becomes an admin nightmare — slowing down migrations, confusing users, and creating hidden security risks."
+  painPoints={[
+    'Admin fatigue: Hundreds of custom fields, screens, and workflows with no clear owner or documentation, making even small changes risky.',
+    'Security blind spots: Unreviewed permission schemes and global permissions that may expose sensitive data without anyone noticing.',
+    'Migration blockers: Cloud migrations require a clean instance — every orphaned scheme and unused field is a potential roadblock or data loss risk.',
+    'No built-in audit tools: Jira Cloud has no native way to assess instance health, leaving admins to manually check configurations one by one.',
+  ]}
+  solutionIntro="We saw this pattern in every consulting engagement: admins overwhelmed by technical debt they couldn't even measure. That's why we built Scalpel for Jira — a systematic admin toolkit that scans, scores, and helps remediate instance configuration issues."
+  keyFeatures={[
+    'Health Score Dashboard: Overall instance grade (A–F) with breakdown by category, so you know where to focus first.',
+    '12+ Scanner Modules: Custom fields, workflows, screens, schemes, permissions, notification schemes, and more — each with detailed findings.',
+    'Deep Scan Anatomy Maps: Visual maps showing how configurations are connected, helping you understand dependencies before making changes.',
+    'Direct Remediation: Guided cleanup actions for each finding — not just reports, but paths to resolution.',
+    'Safe Mode: Preview changes before applying them, with rollback-friendly recommendations.',
+    'Export & Documentation: Generate audit reports for compliance, migration planning, or team handoffs.',
+  ]}
+  steps={[
+    { title: 'Run a Health Scan', description: 'Start a full instance scan from the Scalpel dashboard. The scan analyzes all configuration areas and computes your overall Health Score.' },
+    { title: 'Review Findings', description: 'Explore the results by category. Each finding explains what was detected, why it matters, and how severe it is.' },
+    { title: 'Plan Remediation', description: 'Use the Anatomy Maps to understand dependencies. Identify which items are safe to clean up and which need coordination.' },
+    { title: 'Clean Up & Re-scan', description: 'Apply fixes directly or export an action plan. Re-scan after cleanup to track improvement and maintain your Health Score.' },
+  ]}
+/>

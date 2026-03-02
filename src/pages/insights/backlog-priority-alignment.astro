@@ -1,0 +1,34 @@
+---
+import InsightPage from '../../layouts/InsightPage.astro';
+---
+
+<InsightPage
+  title="Backlog Priority Alignment"
+  description="Why backlog priorities fall apart across the issue hierarchy — and how automatic rank cascading keeps them consistent."
+  appName="Rank Cascading for Jira"
+  appIcon="/icon-rank-cascading.png"
+  appHref="/apps/rank-cascading-jira"
+  marketplaceUrl="https://marketplace.atlassian.com/apps/1844919935/rank-cascading-for-jira"
+  problem="Teams working with epics, stories, and subtasks expect priorities to stay aligned across the hierarchy. When a product manager reorders epics on a board, the child stories and tasks should reflect that priority shift. But Jira has no native rank cascading — each level of the hierarchy maintains its own independent ranking. The result is constant misalignment between what leadership prioritizes and what teams actually work on."
+  painPoints={[
+    'Manual effort: Product managers and scrum masters spend time manually re-ranking child issues every time parent priorities change.',
+    'Priority drift: Without automatic cascading, child issue rankings diverge from parent priorities over days and sprints, leading to misalignment.',
+    `Misleading dashboards: Reports and dashboards that aggregate across hierarchy levels show inconsistent data when ranks don't cascade.`,
+    `Cross-team confusion: When multiple teams share epics, each team's board reflects different priorities because child ranks are independent.`,
+  ]}
+  solutionIntro="We saw this problem repeatedly in agile consulting: teams frustrated by the gap between strategic priorities and tactical execution order. Jira's ranking system works great within a single board but falls apart across the hierarchy. That's why we built Rank Cascading — to automatically propagate rank changes from parent to child issues based on board position, status, and swimlane rules."
+  keyFeatures={[
+    'Automatic Rank Propagation: When a parent issue is re-ranked, child issues automatically adjust their rank to match the new priority order.',
+    'Board-Aware Calculation: Rank is computed based on actual board position, status columns, and swimlane configuration — not just the raw rank field.',
+    'Configurable Cascading Rules: Define how deep cascading goes, which issue types participate, and which boards trigger updates.',
+    'Real-Time Updates: Rank changes propagate immediately when the board is reordered, keeping backlogs synchronized at all times.',
+    'Multi-Board Support: Works across multiple boards and projects, ensuring consistent priorities even in scaled agile setups.',
+    'Audit Log: Track every rank change with timestamps and trigger context — know exactly when and why a rank was updated.',
+  ]}
+  steps={[
+    { title: 'Connect Your Board', description: 'Select the Jira board where rank cascading should be active. Rank Cascading reads your board configuration, columns, and swimlanes.' },
+    { title: 'Configure Cascading Rules', description: 'Define which issue types and hierarchy levels participate. Set rules for how board position and status influence the cascaded rank.' },
+    { title: 'Activate Cascading', description: 'Enable rank cascading for the board. From now on, re-ranking a parent issue automatically adjusts the rank of all connected child issues.' },
+    { title: 'Monitor & Adjust', description: `Use the audit log to see rank changes in real time. Refine your rules as your team's workflow evolves.` },
+  ]}
+/>

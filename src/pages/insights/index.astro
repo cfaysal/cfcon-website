@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import InsightCard from '../../components/InsightCard.astro';
+
+const insights = [
+  {
+    title: 'Jira Instance Hygiene',
+    description: 'How years of unchecked growth turn Jira instances into admin nightmares — and how systematic scanning brings them back under control.',
+    href: '/insights/jira-instance-hygiene',
+    appName: 'Scalpel for Jira',
+    appIcon: '/icon-scalpel-jira.png',
+  },
+  {
+    title: 'Broken Links After Cloud Migration',
+    description: 'Why thousands of links break after every Server-to-Cloud migration — and how to find and fix them before users notice.',
+    href: '/insights/cloud-migration-broken-links',
+    appName: 'Legacy URL Scanner for Jira',
+    appIcon: '/icon-legacy-url-scanner.png',
+  },
+  {
+    title: 'Script Migration to Cloud',
+    description: 'Why ScriptRunner and Groovy scripts block cloud migrations — and how deterministic pattern matching converts them reliably.',
+    href: '/insights/script-migration-cloud',
+    appName: 'Alchemist for Jira',
+    appIcon: '/icon-alchemist.png',
+  },
+  {
+    title: 'Backlog Priority Alignment',
+    description: 'Why backlog priorities fall apart across the issue hierarchy — and how automatic rank cascading keeps them consistent.',
+    href: '/insights/backlog-priority-alignment',
+    appName: 'Rank Cascading for Jira',
+    appIcon: '/icon-rank-cascading.png',
+  },
+];
+---
+
+<Layout title="Insights" description="Real-world consulting challenges and the Marketplace Apps we built to solve them.">
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 fade-in">
+        <p class="text-primary text-sm font-semibold tracking-widest uppercase mb-3">Insights</p>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">From consulting challenge to product</h1>
+        <p class="text-text-light max-w-2xl mx-auto text-lg">
+          Real problems we encountered in our Atlassian consulting work — and the apps we built to solve them at scale.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {insights.map((insight, i) => (
+          <div class:list={['fade-in h-full', i % 2 === 0 ? 'fade-in-delay-1' : 'fade-in-delay-2']}>
+            <InsightCard {...insight} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

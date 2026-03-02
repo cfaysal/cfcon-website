@@ -14,9 +14,26 @@ interface Props {
 
 const { name, platform, tagline, description, features, marketplaceUrl, icon, comingSoon = false } = Astro.props;
 const platformColor = platform === 'Jira' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' : 'bg-teal-500/10 text-teal-400 border-teal-500/20';
+
+const appJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Cloud',
+  description: tagline,
+  image: new URL(icon, Astro.site).href,
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    availability: comingSoon ? 'https://schema.org/PreOrder' : 'https://schema.org/InStock',
+  },
+  ...(marketplaceUrl && { url: marketplaceUrl }),
+};
 ---
 
-<Layout title={name} description={tagline}>
+<Layout title={name} description={tagline} ogImage={icon} ogType="website" jsonLd={appJsonLd}>
   <section class="py-24">
     <div class="max-w-4xl mx-auto px-6">
       <!-- Header -->

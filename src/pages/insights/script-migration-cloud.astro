@@ -1,0 +1,34 @@
+---
+import InsightPage from '../../layouts/InsightPage.astro';
+---
+
+<InsightPage
+  title="Script Migration to Cloud"
+  description="Why ScriptRunner and Groovy scripts block cloud migrations — and how deterministic pattern matching converts them reliably."
+  appName="Alchemist for Jira"
+  appIcon="/icon-alchemist.png"
+  appHref="/apps/alchemist-jira"
+  marketplaceUrl="https://marketplace.atlassian.com/apps/948516184/alchemist-for-jira"
+  problem="Organizations running Jira Server or Data Center often rely heavily on ScriptRunner, SIL, or custom Groovy scripts to automate workflows. When migrating to Cloud, these scripts are completely incompatible — Jira Cloud doesn't support Groovy, and the ScriptRunner Cloud version has a fundamentally different API. With dozens to hundreds of scripts per instance, this becomes the single biggest blocker for cloud migration."
+  painPoints={[
+    `Complete incompatibility: Groovy scripts, ScriptRunner listeners, and SIL programs simply don't run in Jira Cloud. There's no automatic conversion path.`,
+    'Slow, expensive manual rewriting: Each script must be analyzed, understood, and rewritten for Jira Automation or Forge — typically taking hours per script.',
+    'Error-prone process: Manual conversion introduces bugs, especially for complex scripts with conditional logic, custom field access, or JQL queries.',
+    'Migration timeline at risk: Script conversion often takes longer than the entire rest of the migration, delaying go-live by weeks or months.',
+  ]}
+  solutionIntro="After spending countless consulting hours manually converting scripts, we realized the patterns were highly repeatable. That's why we built Alchemist — a deterministic conversion engine that uses 1,300+ regex-based patterns to translate scripts into Jira Automation rules or Forge equivalents. No AI, no hallucination, just reliable pattern matching."
+  keyFeatures={[
+    '1,300+ Conversion Patterns: Deterministic regex-based rules covering ScriptRunner, SIL, and Groovy syntax — continuously expanded.',
+    'Risk Score Assessment: Each script gets a conversion confidence score, so you know which scripts convert cleanly and which need manual review.',
+    'No AI Hallucination: Pure pattern matching means the output is predictable and verifiable — unlike LLM-based conversion tools.',
+    'Batch Processing: Upload and convert dozens of scripts at once, with individual reports for each conversion.',
+    'Detailed Conversion Report: Line-by-line breakdown showing what was converted, what was flagged, and what needs manual attention.',
+    'Export to Jira Automation: Generates ready-to-import Jira Automation rule definitions for straightforward conversions.',
+  ]}
+  steps={[
+    { title: 'Upload Your Scripts', description: 'Paste or upload your ScriptRunner, SIL, or Groovy scripts. Alchemist accepts individual scripts or batch uploads.' },
+    { title: 'Analyze & Score', description: 'Each script is analyzed against 1,300+ patterns. You get a Risk Score and a line-by-line conversion preview before committing.' },
+    { title: 'Review Conversion Output', description: 'Examine the converted Jira Automation rules or Forge code. Flagged sections are highlighted for manual review.' },
+    { title: 'Export & Deploy', description: 'Export the converted rules and deploy them to your Jira Cloud instance. Re-run the analysis on remaining scripts to track overall progress.' },
+  ]}
+/>
