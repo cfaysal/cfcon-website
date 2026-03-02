@@ -11,63 +11,101 @@ import AppPage from '../../layouts/AppPage.astro';
   features={[
     'Health Score Dashboard — instance-wide grade (A-F) with trend tracking',
     '12+ Scanner Modules — orphaned spaces, inactive users, stale projects, permission gaps',
-    'Deep Scan Matrix — cross-reference analysis of schemes, workflows, screens, and fields',
+    'Deep Scan Anatomy Map — interactive scheme visualization with drill-down',
     'Diagnosis Engine — 3-tier root cause analysis',
-    'Treatment Plans — actionable fix recommendations with impact preview',
-    'Admin Tools — Space Manager, Custom Field Manager, Scheme Manager, and more',
+    'Workflow Manager — analyze transitions, detect broken rules & missing plugins',
+    'Config Element Management Suite — 20+ managers for schemes, fields, screens & more',
+    'Filter & Dashboard Audit — find broken JQL, orphaned filters & stale dashboards',
     'User Offboarding & GDPR Anonymization',
     'Scheduled Scans with notifications',
-    'Export as CSV, PDF, or Confluence page',
+    'Export as CSV, JSON, or Confluence page',
     'Full Audit Log — every action tracked',
+    'Runs on Atlassian — no external data transfer',
   ]}
   marketplaceUrl="https://marketplace.atlassian.com/apps/1522073931/scalpel-for-jira"
 >
   <!-- How it works -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
+  <div class="mb-14 fade-in">
+    <h2 class="text-2xl font-bold mb-6">How it works</h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">1</div>
+      <div class="glass-card rounded-xl p-5 text-center">
+        <div class="text-3xl font-extrabold text-primary mb-2">1</div>
         <h3 class="font-semibold mb-1">Scan</h3>
         <p class="text-text-light text-sm">Run 12+ scanner modules to discover configuration issues across your instance</p>
       </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">2</div>
+      <div class="glass-card rounded-xl p-5 text-center">
+        <div class="text-3xl font-extrabold text-primary mb-2">2</div>
         <h3 class="font-semibold mb-1">Diagnose</h3>
         <p class="text-text-light text-sm">Deep Scan cross-references and 3-tier analysis to understand root causes</p>
       </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">3</div>
+      <div class="glass-card rounded-xl p-5 text-center">
+        <div class="text-3xl font-extrabold text-primary mb-2">3</div>
         <h3 class="font-semibold mb-1">Plan</h3>
         <p class="text-text-light text-sm">Treatment plans with What-If simulation before making changes</p>
       </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">4</div>
+      <div class="glass-card rounded-xl p-5 text-center">
+        <div class="text-3xl font-extrabold text-primary mb-2">4</div>
         <h3 class="font-semibold mb-1">Execute</h3>
         <p class="text-text-light text-sm">Apply fixes with rollback support and full audit trail</p>
       </div>
     </div>
   </div>
 
+  <!-- Workflow Manager Video -->
+  <div class="mb-14 fade-in">
+    <h2 class="text-2xl font-bold mb-2">Workflow Manager</h2>
+    <p class="text-text-light text-sm mb-6">Analyze workflow transitions, detect broken plugin rules, disabled conditions, and missing post-functions — all in one view.</p>
+    <div class="glass-card rounded-2xl overflow-hidden p-1">
+      <video
+        controls
+        preload="metadata"
+        poster="/apps/scalpel-jira/Dashboard.png"
+        class="w-full rounded-xl"
+      >
+        <source src="/apps/scalpel-jira/WF_manager_new.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+
   <!-- Screenshots -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
-    <div class="space-y-6">
+  <div class="mb-14 fade-in">
+    <h2 class="text-2xl font-bold mb-6">Screenshots</h2>
+    <div class="space-y-8">
       <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Dashboard with Health Score</h3>
-        <img src="/apps/scalpel-jira/dashboard-results.png" alt="Scalpel Dashboard with Health Score" class="rounded-xl border border-border w-full" loading="lazy" />
+        <h3 class="text-sm font-medium text-text-light mb-2">Dashboard — Health Score, Findings Breakdown & Trend</h3>
+        <div class="glass-card rounded-2xl overflow-hidden p-1">
+          <img src="/apps/scalpel-jira/Dashboard.png" alt="Scalpel Dashboard with Health Score and Trend" class="rounded-xl w-full" loading="lazy" />
+        </div>
       </div>
       <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Scanner Modules</h3>
-        <img src="/apps/scalpel-jira/scanners.png" alt="Scalpel Scanner Modules" class="rounded-xl border border-border w-full" loading="lazy" />
+        <h3 class="text-sm font-medium text-text-light mb-2">Deep Scan — Anatomy Map with Scheme Relationships</h3>
+        <div class="glass-card rounded-2xl overflow-hidden p-1">
+          <img src="/apps/scalpel-jira/anatomy_map_new.png" alt="Deep Scan Anatomy Map" class="rounded-xl w-full" loading="lazy" />
+        </div>
       </div>
       <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Deep Scan Matrix</h3>
-        <img src="/apps/scalpel-jira/deep-scan-matrix.png" alt="Deep Scan Matrix" class="rounded-xl border border-border w-full" loading="lazy" />
+        <h3 class="text-sm font-medium text-text-light mb-2">Anatomy Map — Drill-Down to Screen Fields</h3>
+        <div class="glass-card rounded-2xl overflow-hidden p-1">
+          <img src="/apps/scalpel-jira/anatomy_map_new_drill.png" alt="Anatomy Map Drill-Down" class="rounded-xl w-full" loading="lazy" />
+        </div>
       </div>
       <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Admin Tools</h3>
-        <img src="/apps/scalpel-jira/tools.png" alt="Scalpel Admin Tools" class="rounded-xl border border-border w-full" loading="lazy" />
+        <h3 class="text-sm font-medium text-text-light mb-2">Config Element Management Suite — 20+ Admin Tools</h3>
+        <div class="glass-card rounded-2xl overflow-hidden p-1">
+          <img src="/apps/scalpel-jira/scalpel_managers_suite.png" alt="Config Element Management Suite" class="rounded-xl w-full" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Filter & Dashboard Audit — Broken JQL Detection</h3>
+        <div class="glass-card rounded-2xl overflow-hidden p-1">
+          <img src="/apps/scalpel-jira/filter_jql_broken.png" alt="Filter and Dashboard Audit" class="rounded-xl w-full" loading="lazy" />
+        </div>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Settings — Scan Configuration & Scheduled Scans</h3>
+        <div class="glass-card rounded-2xl overflow-hidden p-1">
+          <img src="/apps/scalpel-jira/settings_top.png" alt="Scalpel Settings" class="rounded-xl w-full" loading="lazy" />
+        </div>
       </div>
     </div>
   </div>
