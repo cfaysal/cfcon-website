@@ -17,7 +17,10 @@ import AppPage from '../../layouts/AppPage.astro';
     'Syntax Validation — validate converted code for common errors',
     'Bulk Upload — multi-file batch conversion',
     'Deploy Helper — step-by-step deployment guides per script type',
-    'Alchemist AI — Rovo Agent for conversational migration assistance (Advanced)',
+    'Script Builder — visual drag-and-drop script assembly with 26 blocks across 8 categories (Standard+)',
+    'Use-Case Templates — 6 ready-made workflows (Cascade Priority, Bulk Update, WSJF Score, and more)',
+    'AI Script Generator — intelligent 3-stage routing: detects native Automation, matches templates, or generates via Rovo AI',
+    'Alchemist AI — Rovo Agent for conversational migration and script generation (Advanced)',
     'Export as JSON, PDF, or plain script',
   ]}
   marketplaceUrl="https://marketplace.atlassian.com/apps/948516184/alchemist-for-jira"
@@ -41,6 +44,26 @@ import AppPage from '../../layouts/AppPage.astro';
       <div class="bg-surface border border-border rounded-lg p-5">
         <h3 class="font-semibold mb-2">Jira Expressions</h3>
         <p class="text-text-light text-sm">260+ condition/validator templates</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script Builder -->
+  <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6">Script Builder</h2>
+    <p class="text-text-light mb-6">Don't have a legacy script to convert? Build new Cloud scripts visually — no coding required. Drag blocks, pick a template, or describe what you need and let AI figure out the rest.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-surface border border-border rounded-lg p-5">
+        <h3 class="font-semibold mb-2">Visual Block Assembly</h3>
+        <p class="text-text-light text-sm">26 blocks across 8 categories — Work Items, Search, Fields, Transitions, Comments, Notifications, Control Flow, Users. Assemble scripts by stacking blocks with live HAPI Groovy preview.</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5">
+        <h3 class="font-semibold mb-2">Use-Case Templates</h3>
+        <p class="text-text-light text-sm">6 ready-made workflows: Cascade Priority, Bulk Update, WSJF Score, Cross-Project Clone, Sprint Cleanup, and Epic Completion. One click loads a pre-built block assembly.</p>
+      </div>
+      <div class="bg-surface border border-border rounded-lg p-5">
+        <h3 class="font-semibold mb-2">AI Script Generator</h3>
+        <p class="text-text-light text-sm">Describe what you need in plain text. Alchemist routes your request through 3 stages: native Jira Automation detection, template matching, and Rovo AI generation for complex cases.</p>
       </div>
     </div>
   </div>
@@ -76,6 +99,14 @@ import AppPage from '../../layouts/AppPage.astro';
   <div class="mb-12">
     <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
     <div class="space-y-6">
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Script Builder</h3>
+        <img src="/apps/alchemist-jira/script-builder.png" alt="Visual Script Builder with drag-and-drop blocks" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
+      <div>
+        <h3 class="text-sm font-medium text-text-light mb-2">Script Builder — Result</h3>
+        <img src="/apps/alchemist-jira/script-builder-result.png" alt="Script Builder generated output" class="rounded-xl border border-border w-full" loading="lazy" />
+      </div>
       <div>
         <h3 class="text-sm font-medium text-text-light mb-2">App Overview</h3>
         <img src="/apps/alchemist-jira/app-overview.png" alt="Alchemist App Overview" class="rounded-xl border border-border w-full" loading="lazy" />
