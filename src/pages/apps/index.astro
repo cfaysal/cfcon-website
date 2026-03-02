@@ -61,7 +61,7 @@ const apps = [
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {apps.map((app, i) => (
-          <div class:list={['fade-in', i % 2 === 0 ? 'fade-in-delay-1' : 'fade-in-delay-2']}>
+          <div class:list={['fade-in h-full', i % 2 === 0 ? 'fade-in-delay-1' : 'fade-in-delay-2']}>
             <AppCard {...app} />
           </div>
         ))}
