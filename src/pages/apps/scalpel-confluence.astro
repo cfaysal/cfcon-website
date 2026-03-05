@@ -1,5 +1,8 @@
 ---
 import AppPage from '../../layouts/AppPage.astro';
+import Section from '../../components/Section.astro';
+import StepGrid from '../../components/StepGrid.astro';
+import Screenshot from '../../components/Screenshot.astro';
 ---
 
 <AppPage
@@ -10,66 +13,37 @@ import AppPage from '../../layouts/AppPage.astro';
   description="Over time, Confluence instances accumulate orphaned personal spaces, pages nobody has viewed in years, broken macros, label chaos, and permission configurations that no longer make sense. Scalpel finds these issues automatically and gives you the tools to fix them — safely and with full audit trail."
   features={[
     'Health Score Dashboard — instance-wide grade (A-F) with trend tracking',
-    '13 Scanner Modules — orphaned spaces, inactive users, broken macros, label audit, and more',
+    '13 Scanner Modules — orphaned spaces, inactive users, broken macros, permission audit, and more',
     'Deep Scan — 7-layer space anatomy: page tree, permissions, attachments, labels, macros, versions, trash',
-    'Dependency Graph — interactive D3 visualization of space structure',
+    'Dependency Graph — interactive D3 visualization of space structure with zoom, pan, and PNG export',
     'Diagnosis Engine — 3-tier root cause analysis',
-    '9 Admin Tools — Space, Permission, Template, Trash, Macro, Attachment, Label Manager & more',
-    'User Anonymizer for GDPR compliance',
-    'Scheduled Scans with notifications',
+    '10 Admin Tools — Space, Page, Permission, Template, Trash, Macro, Attachment, Label Manager, User Anonymizer, Page Export',
+    'Smart Link Scanner — detect broken Smart Links to deleted pages, work items, or spaces',
+    'Scheduled Scans — automated recurring scans (Standard+)',
     'Export as CSV, PDF, or Confluence page',
-    'Full Audit Log — every action tracked',
+    'Full Audit Log — every action tracked with actor, timestamp, and details',
   ]}
   comingSoon={true}
 >
-  <!-- How it works -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-      <div class="bg-surface border border-border rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-primary mb-2">1</div>
-        <h3 class="font-semibold text-sm mb-1">Pre-Screen</h3>
-        <p class="text-text-light text-xs">Instance profile with key metrics</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-primary mb-2">2</div>
-        <h3 class="font-semibold text-sm mb-1">Scan</h3>
-        <p class="text-text-light text-xs">13 scanner modules discover hygiene issues</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-primary mb-2">3</div>
-        <h3 class="font-semibold text-sm mb-1">Deep Scan</h3>
-        <p class="text-text-light text-xs">Anatomize individual spaces in 7 layers</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-primary mb-2">4</div>
-        <h3 class="font-semibold text-sm mb-1">Diagnose</h3>
-        <p class="text-text-light text-xs">Root cause analysis</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-4 text-center">
-        <div class="text-2xl font-bold text-primary mb-2">5</div>
-        <h3 class="font-semibold text-sm mb-1">Fix</h3>
-        <p class="text-text-light text-xs">Built-in tools with audit trail</p>
-      </div>
-    </div>
-  </div>
+  <Section title="How it works">
+    <StepGrid steps={[
+      { title: 'Pre-Screen', description: 'Instance profile with key metrics (spaces, users, pages, attachments, trash)' },
+      { title: 'Scan', description: '13 scanner modules discover hygiene issues across your instance' },
+      { title: 'Deep Scan', description: 'Anatomize individual spaces in 7 layers with interactive D3 graph' },
+      { title: 'Diagnose', description: '3-tier root cause analysis to understand why issues exist' },
+      { title: 'Fix', description: '10 built-in tools to clean up issues with full audit trail' },
+    ]} />
+  </Section>
 
-  <!-- Screenshots -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Dashboard with Health Score</h3>
-        <img src="/apps/scalpel-confluence/dashboard.png" alt="Scalpel for Confluence Dashboard" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Scanner Modules</h3>
-        <img src="/apps/scalpel-confluence/scanners.png" alt="Scanner Modules" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Admin Tools</h3>
-        <img src="/apps/scalpel-confluence/tools.png" alt="Admin Tools" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
+  <Section title="Screenshots">
+    <div class="space-y-8">
+      <Screenshot title="Dashboard with Health Score" src="/apps/scalpel-confluence/dashboard.png" alt="Scalpel for Confluence Dashboard showing health score, findings breakdown, scanner cards, and trend chart" />
+      <Screenshot title="13 Scanner Modules" src="/apps/scalpel-confluence/scanners.png" alt="All 13 scanner modules with findings count and category badges" />
+      <Screenshot title="Deep Scan — 7-Layer Space Anatomy" src="/apps/scalpel-confluence/deepscan.png" alt="Deep Scan table view showing page tree, permissions, attachments, labels, macros, version bloat, and trash layers" />
+      <Screenshot title="Deep Scan — Interactive D3 Dependency Graph" src="/apps/scalpel-confluence/deepscan_d3.png" alt="Interactive D3 visualization of space structure with expandable nodes for macros, labels, attachments, and more" />
+      <Screenshot title="Confluence Management Suite (10 Tools)" src="/apps/scalpel-confluence/tools.png" alt="Admin tools: Space Manager, Page Manager, Permission Manager, Template Manager, Trash Manager, Macro Manager, Attachment Manager, Label Manager, User Anonymizer, Page Export" />
+      <Screenshot title="Settings — Scan Configuration & License Cost" src="/apps/scalpel-confluence/settings_1.png" alt="Settings page with scan thresholds, export options, edition info, and license cost estimation" />
+      <Screenshot title="Audit Log" src="/apps/scalpel-confluence/audit.png" alt="Audit log showing all actions with type filters, targets, actors, and timestamps" />
     </div>
-  </div>
+  </Section>
 </AppPage>
