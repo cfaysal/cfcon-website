@@ -1,0 +1,53 @@
+---
+import AppPage from '../../layouts/AppPage.astro';
+import Section from '../../components/Section.astro';
+import StepGrid from '../../components/StepGrid.astro';
+import Screenshot from '../../components/Screenshot.astro';
+import InfoCard from '../../components/InfoCard.astro';
+---
+
+<AppPage
+  name="JSM Vendor Connect"
+  platform="Jira"
+  tagline="Automatic license lookup for JSM support tickets"
+  icon="/icon-jsm-vendor-connect.png"
+  description="Link your Atlassian Marketplace vendor account to Jira Service Management. When a customer submits a support ticket, license details — status, edition, tier, company, and maintenance — are automatically displayed in the issue panel. No more switching between JSM and the Marketplace dashboard."
+  features={[
+    'Automatic License Lookup — fetches license data live from the Marketplace Reporting API',
+    'Issue Panel — status, edition, tier, company, contact, hosting, site, and maintenance displayed directly on the ticket',
+    'Customer Portal Field — customers select their license from a grouped dropdown or enter their SEN manually',
+    'Admin Entitlement Dashboard — browse all vendor entitlements with search, app grouping, and expand/collapse details',
+    'Renewal Tracking — identifies long-term customers via transaction history and renewal count',
+    'Domain Verification — fail-closed security ensures customers can only see their own license data',
+    'No Data Storage — all license data fetched live, never persisted. Only encrypted API credentials stored',
+    'Multi-Language — full English and German translations with locale-aware date formatting',
+    'Built on Forge — runs entirely on Atlassian infrastructure, no external servers',
+  ]}
+  marketplaceUrl="https://marketplace.atlassian.com/apps/jsm-vendor-connect"
+>
+  <Section title="How it works">
+    <StepGrid steps={[
+      { title: 'Connect', description: 'Link your Marketplace vendor account with email, API token, and vendor ID' },
+      { title: 'Configure', description: 'Select your JSM projects where support tickets arrive' },
+      { title: 'Automatic', description: 'License data appears on every ticket with an entitlement number' },
+      { title: 'Insights', description: 'Browse all entitlements, track renewals, and identify long-term customers' },
+    ]} />
+  </Section>
+
+  <Section title="For Agents & Admins" subtitle="Everything you need to provide informed support — without leaving the ticket.">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <InfoCard title="Issue Panel" description="Full license details directly on the JSM ticket — status, edition, tier, company, contact, hosting, maintenance end date, and entitlement number." />
+      <InfoCard title="Entitlement Dashboard" description="Search and browse all vendor entitlements grouped by app. Expand any entry for company, contacts, country, hosting, site, partner, maintenance dates, and renewal count." />
+      <InfoCard title="Security" description="Fail-closed domain verification, input sanitization, encrypted credential storage. No personal data persisted. Customers can only access their own license data." />
+    </div>
+  </Section>
+
+  <Section title="Screenshots">
+    <div class="space-y-8">
+      <Screenshot title="Issue Panel — License Details" src="/apps/jsm-vendor-connect/agent-view.png" alt="License details displayed in the JSM issue panel" />
+      <Screenshot title="Customer Portal — License Selection" src="/apps/jsm-vendor-connect/customer-view.png" alt="Customer selecting their license in the portal" />
+      <Screenshot title="Admin — Entitlement Dashboard" src="/apps/jsm-vendor-connect/configured-results.png" alt="Admin entitlement dashboard with search and app grouping" />
+      <Screenshot title="Admin — Connection Setup" src="/apps/jsm-vendor-connect/configure-edit.png" alt="Vendor connection configuration form" />
+    </div>
+  </Section>
+</AppPage>
