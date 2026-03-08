@@ -10,9 +10,10 @@ interface Props {
   marketplaceUrl?: string;
   icon: string;
   comingSoon?: boolean;
+  freeOnly?: boolean;
 }
 
-const { name, platform, tagline, description, features, marketplaceUrl, icon, comingSoon = false } = Astro.props;
+const { name, platform, tagline, description, features, marketplaceUrl, icon, comingSoon = false, freeOnly = false } = Astro.props;
 const platformColor = platform === 'Jira' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' : 'bg-teal-500/10 text-teal-400 border-teal-500/20';
 
 const appJsonLd = {
@@ -77,24 +78,37 @@ const appJsonLd = {
       </div>
 
       <!-- Editions -->
-      <div class="mb-14 fade-in">
-        <h2 class="text-2xl font-bold mb-6">Editions</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="glass-card rounded-2xl p-6">
-            <h3 class="font-bold text-lg mb-2">Free</h3>
-            <p class="text-text-light text-sm leading-relaxed">Get started with core features at no cost. Perfect for evaluating the app.</p>
-          </div>
-          <div class="glass-card rounded-2xl p-6 !border-primary/40 relative">
-            <span class="absolute -top-3 left-4 bg-primary text-white text-xs font-semibold px-3 py-0.5 rounded-full shadow-lg shadow-primary/20">Popular</span>
-            <h3 class="font-bold text-lg mb-2">Standard</h3>
-            <p class="text-text-light text-sm leading-relaxed">Expanded limits and additional features for growing teams.</p>
-          </div>
-          <div class="glass-card rounded-2xl p-6">
-            <h3 class="font-bold text-lg mb-2">Advanced</h3>
-            <p class="text-text-light text-sm leading-relaxed">Full feature set with highest limits for enterprise-scale usage.</p>
+      {freeOnly ? (
+        <div class="mb-14 fade-in">
+          <h2 class="text-2xl font-bold mb-6">Pricing</h2>
+          <div class="max-w-sm">
+            <div class="glass-card rounded-2xl p-6 !border-primary/40 relative">
+              <span class="absolute -top-3 left-4 bg-primary text-white text-xs font-semibold px-3 py-0.5 rounded-full shadow-lg shadow-primary/20">Free</span>
+              <h3 class="font-bold text-lg mb-2">All features included</h3>
+              <p class="text-text-light text-sm leading-relaxed">No limits, no tiers, no credit card. Every feature is available to all users at no cost.</p>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div class="mb-14 fade-in">
+          <h2 class="text-2xl font-bold mb-6">Editions</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="glass-card rounded-2xl p-6">
+              <h3 class="font-bold text-lg mb-2">Free</h3>
+              <p class="text-text-light text-sm leading-relaxed">Get started with core features at no cost. Perfect for evaluating the app.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6 !border-primary/40 relative">
+              <span class="absolute -top-3 left-4 bg-primary text-white text-xs font-semibold px-3 py-0.5 rounded-full shadow-lg shadow-primary/20">Popular</span>
+              <h3 class="font-bold text-lg mb-2">Standard</h3>
+              <p class="text-text-light text-sm leading-relaxed">Expanded limits and additional features for growing teams.</p>
+            </div>
+            <div class="glass-card rounded-2xl p-6">
+              <h3 class="font-bold text-lg mb-2">Advanced</h3>
+              <p class="text-text-light text-sm leading-relaxed">Full feature set with highest limits for enterprise-scale usage.</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <!-- Extra content slot -->
       <slot />
