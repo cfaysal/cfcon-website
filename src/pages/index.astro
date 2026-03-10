@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AppCard from '../components/AppCard.astro';
+import ProcessFlow from '../components/ProcessFlow.astro';
 
 const apps = [
   {
@@ -70,14 +71,14 @@ const organizationJsonLd = {
     <div class="hero-orb hero-orb-3"></div>
 
     <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
-      <img src="/logo.png" alt="CFCON Consulting" class="h-36 md:h-52 mx-auto mb-10 drop-shadow-2xl" />
-      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+      <img src="/logo.png" alt="CFCON Consulting" class="h-36 md:h-52 mx-auto mb-10 drop-shadow-2xl scale-in" />
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight blur-in">
         Atlassian Consulting<br/><span class="gradient-text-brand">& Marketplace Apps</span>
       </h1>
-      <p class="text-lg md:text-xl text-white/60 leading-relaxed mb-10 max-w-2xl mx-auto">
+      <p class="text-lg md:text-xl text-white/60 leading-relaxed mb-10 max-w-2xl mx-auto fade-in fade-in-delay-1">
         We help organizations get the most out of Jira and Confluence. From expert consulting to purpose-built apps on the Atlassian Marketplace.
       </p>
-      <div class="flex flex-wrap gap-4 justify-center mb-14">
+      <div class="flex flex-wrap gap-4 justify-center mb-14 fade-in fade-in-delay-2">
         <a href="/apps" class="btn-glow inline-flex items-center px-8 py-4 bg-primary text-white font-semibold rounded-xl text-lg transition-colors">
           Explore our Apps
         </a>
@@ -85,7 +86,7 @@ const organizationJsonLd = {
           Get in touch
         </a>
       </div>
-      <div class="flex flex-wrap gap-3 justify-center">
+      <div class="flex flex-wrap gap-3 justify-center fade-in fade-in-delay-3">
         <span class="badge-shimmer inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium backdrop-blur-sm">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 5.143L5.143 11.571l6.428 6.429 6.429-6.429-6.429-6.428zm0-2.857L18.857 9.57l-7.286 7.286L4.286 9.571 11.571 2.286z"/><path d="M11.571 5.143l-6.428 6.428h12.857l-6.429-6.428z" opacity=".4"/></svg>
           Atlassian Partner
@@ -105,7 +106,7 @@ const organizationJsonLd = {
   <!-- Stats -->
   <section class="py-16 border-b border-white/5 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center fade-in">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center stagger-children">
         <div>
           <div class="stat-number">6</div>
           <div class="text-text-light text-sm mt-2 tracking-wide uppercase">Marketplace Apps</div>
@@ -138,7 +139,7 @@ const organizationJsonLd = {
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Consulting -->
-        <div class="fade-in fade-in-delay-1 glow-card">
+        <div class="slide-in-left glow-card">
           <div class="glow-card-inner rounded-2xl">
             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5 ring-1 ring-primary/20">
               <svg width="24" height="24" fill="none" stroke="currentColor" class="text-primary" stroke-width="2">
@@ -159,7 +160,7 @@ const organizationJsonLd = {
         </div>
 
         <!-- Marketplace Apps -->
-        <div class="fade-in fade-in-delay-2 glow-card">
+        <div class="slide-in-right glow-card">
           <div class="glow-card-inner rounded-2xl">
             <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5 ring-1 ring-accent/20">
               <svg width="24" height="24" fill="none" stroke="currentColor" class="text-accent" stroke-width="2">
@@ -187,6 +188,22 @@ const organizationJsonLd = {
 
   <div class="section-divider"></div>
 
+  <!-- How we build -->
+  <section class="py-24 grid-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 blur-in">
+        <p class="text-primary text-sm font-semibold tracking-widest uppercase mb-3">How we build</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">From experience to product</h2>
+        <p class="text-text-light max-w-2xl mx-auto text-lg">
+          Every app starts with real problems we've solved as consultants — then engineered into tools for everyone.
+        </p>
+      </div>
+      <ProcessFlow />
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
   <!-- Apps Preview -->
   <section class="py-24 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
@@ -197,9 +214,9 @@ const organizationJsonLd = {
           Admin tools built by Atlassian practitioners, for Atlassian practitioners.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {apps.map((app, i) => (
-          <div class:list={['fade-in h-full', i % 2 === 0 ? 'fade-in-delay-1' : 'fade-in-delay-2']}>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
+        {apps.map((app) => (
+          <div class="h-full">
             <AppCard {...app} />
           </div>
         ))}

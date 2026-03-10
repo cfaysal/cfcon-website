@@ -63,9 +63,9 @@ const appJsonLd = {
       </div>
 
       <!-- Features -->
-      <div class="mb-14 fade-in">
-        <h2 class="text-2xl font-bold mb-6">Features</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div class="mb-14">
+        <h2 class="text-2xl font-bold mb-6 fade-in">Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 stagger-children">
           {features.map((feature) => (
             <div class="flex items-start gap-3 glass-card rounded-xl p-4">
               <span class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 ring-1 ring-primary/20">
@@ -90,19 +90,19 @@ const appJsonLd = {
           </div>
         </div>
       ) : (
-        <div class="mb-14 fade-in">
-          <h2 class="text-2xl font-bold mb-6">Editions</h2>
+        <div class="mb-14">
+          <h2 class="text-2xl font-bold mb-6 fade-in">Editions</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="glass-card rounded-2xl p-6">
+            <div class="glass-card rounded-2xl p-6 slide-in-left">
               <h3 class="font-bold text-lg mb-2">Free</h3>
               <p class="text-text-light text-sm leading-relaxed">Get started with core features at no cost. Perfect for evaluating the app.</p>
             </div>
-            <div class="glass-card rounded-2xl p-6 !border-primary/40 relative">
+            <div class="glass-card rounded-2xl p-6 !border-primary/40 relative scale-in">
               <span class="absolute -top-3 left-4 bg-primary text-white text-xs font-semibold px-3 py-0.5 rounded-full shadow-lg shadow-primary/20">Popular</span>
               <h3 class="font-bold text-lg mb-2">Standard</h3>
               <p class="text-text-light text-sm leading-relaxed">Expanded limits and additional features for growing teams.</p>
             </div>
-            <div class="glass-card rounded-2xl p-6">
+            <div class="glass-card rounded-2xl p-6 slide-in-right">
               <h3 class="font-bold text-lg mb-2">Advanced</h3>
               <p class="text-text-light text-sm leading-relaxed">Full feature set with highest limits for enterprise-scale usage.</p>
             </div>
@@ -124,7 +124,7 @@ const appJsonLd = {
           </a>
         </div>
       ) : (
-        <div class="fade-in glass-card rounded-2xl p-10 text-center !border-primary/20">
+        <div class="scale-in glass-card rounded-2xl p-10 text-center !border-primary/20">
           <h2 class="text-xl font-bold mb-3">Ready to get started?</h2>
           <p class="text-text-light mb-6">Install {name} from the Atlassian Marketplace.</p>
           <a href={marketplaceUrl} target="_blank" rel="noopener"

@@ -12,7 +12,7 @@ const { steps } = Astro.props;
 const colClass = `grid grid-cols-1 md:grid-cols-${steps.length} gap-4`;
 ---
 
-<div class={colClass}>
+<div class:list={[colClass, 'stagger-children']}>
   {steps.map((step, i) => (
     <div class="glass-card rounded-xl p-5 text-center">
       <div class="text-3xl font-extrabold text-primary mb-2">{i + 1}</div>
