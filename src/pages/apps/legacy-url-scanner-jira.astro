@@ -1,5 +1,8 @@
 ---
 import AppPage from '../../layouts/AppPage.astro';
+import Section from '../../components/Section.astro';
+import StepGrid from '../../components/StepGrid.astro';
+import Screenshot from '../../components/Screenshot.astro';
 ---
 
 <AppPage
@@ -22,48 +25,20 @@ import AppPage from '../../layouts/AppPage.astro';
   ]}
   marketplaceUrl="https://marketplace.atlassian.com/apps/72889190/legacy-url-scanner-for-jira"
 >
-  <!-- How it works -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">1</div>
-        <h3 class="font-semibold mb-1">Configure</h3>
-        <p class="text-text-light text-sm">Enter your old server hostnames and map them to Cloud URLs</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">2</div>
-        <h3 class="font-semibold mb-1">Scan</h3>
-        <p class="text-text-light text-sm">Scan by project, JQL query, or instance-wide to find all legacy URLs</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">3</div>
-        <h3 class="font-semibold mb-1">Fix</h3>
-        <p class="text-text-light text-sm">Preview changes, then replace individually or in bulk with Smart Links</p>
-      </div>
-    </div>
-  </div>
+  <Section title="How it works">
+    <StepGrid steps={[
+      { title: 'Configure', description: 'Enter your old server hostnames and map them to Cloud URLs' },
+      { title: 'Scan', description: 'Scan by project, JQL query, or instance-wide to find all legacy URLs' },
+      { title: 'Fix', description: 'Preview changes, then replace individually or in bulk with Smart Links' },
+    ]} />
+  </Section>
 
-  <!-- Screenshots -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Dashboard</h3>
-        <img src="/apps/legacy-url-scanner-jira/dashboard.png" alt="Legacy URL Scanner Dashboard" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Scan Configuration</h3>
-        <img src="/apps/legacy-url-scanner-jira/scan.png" alt="Scan Configuration" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Results with Preview</h3>
-        <img src="/apps/legacy-url-scanner-jira/results-expanded.png" alt="Scan Results with Preview" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Domain Governance</h3>
-        <img src="/apps/legacy-url-scanner-jira/governance.png" alt="Domain Governance Rules" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
+  <Section title="Screenshots">
+    <div class="space-y-8">
+      <Screenshot title="Dashboard" src="/apps/legacy-url-scanner-jira/dashboard.png" alt="Legacy URL Scanner Dashboard" />
+      <Screenshot title="Scan Configuration" src="/apps/legacy-url-scanner-jira/scan.png" alt="Scan Configuration" />
+      <Screenshot title="Results with Preview" src="/apps/legacy-url-scanner-jira/results-expanded.png" alt="Scan Results with Preview" />
+      <Screenshot title="Domain Governance" src="/apps/legacy-url-scanner-jira/governance.png" alt="Domain Governance Rules" />
     </div>
-  </div>
+  </Section>
 </AppPage>

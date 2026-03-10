@@ -1,5 +1,8 @@
 ---
 import AppPage from '../../layouts/AppPage.astro';
+import Section from '../../components/Section.astro';
+import StepGrid from '../../components/StepGrid.astro';
+import Screenshot from '../../components/Screenshot.astro';
 ---
 
 <AppPage
@@ -22,53 +25,21 @@ import AppPage from '../../layouts/AppPage.astro';
   ]}
   marketplaceUrl="https://marketplace.atlassian.com/apps/1844919935/rank-cascading-for-jira"
 >
-  <!-- How it works -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">1</div>
-        <h3 class="font-semibold mb-1">Create</h3>
-        <p class="text-text-light text-sm">Create a cascade and select a board</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">2</div>
-        <h3 class="font-semibold mb-1">Configure</h3>
-        <p class="text-text-light text-sm">Set target field, status priority, and swimlanes</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">3</div>
-        <h3 class="font-semibold mb-1">Preview</h3>
-        <p class="text-text-light text-sm">Review calculated ranks before applying</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">4</div>
-        <h3 class="font-semibold mb-1">Sync</h3>
-        <p class="text-text-light text-sm">Ranks are calculated and written to your field</p>
-      </div>
-    </div>
-  </div>
+  <Section title="How it works">
+    <StepGrid steps={[
+      { title: 'Create', description: 'Create a cascade and select a board' },
+      { title: 'Configure', description: 'Set target field, status priority, and swimlanes' },
+      { title: 'Preview', description: 'Review calculated ranks before applying' },
+      { title: 'Sync', description: 'Ranks are calculated and written to your field' },
+    ]} />
+  </Section>
 
-  <!-- Screenshots -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">App Overview</h3>
-        <img src="/apps/rank-cascading-jira/app-overview.png" alt="Rank Cascading Overview" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Cascade Configuration</h3>
-        <img src="/apps/rank-cascading-jira/cascade-list.png" alt="Cascade List" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Visual Rank Map</h3>
-        <img src="/apps/rank-cascading-jira/rank-map.png" alt="Visual Rank Map" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">What-If Simulation</h3>
-        <img src="/apps/rank-cascading-jira/what-if-simulation.png" alt="What-If Simulation" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
+  <Section title="Screenshots">
+    <div class="space-y-8">
+      <Screenshot title="App Overview" src="/apps/rank-cascading-jira/app-overview.png" alt="Rank Cascading Overview" />
+      <Screenshot title="Cascade Configuration" src="/apps/rank-cascading-jira/cascade-list.png" alt="Cascade List" />
+      <Screenshot title="Visual Rank Map" src="/apps/rank-cascading-jira/rank-map.png" alt="Visual Rank Map" />
+      <Screenshot title="What-If Simulation" src="/apps/rank-cascading-jira/what-if-simulation.png" alt="What-If Simulation" />
     </div>
-  </div>
+  </Section>
 </AppPage>

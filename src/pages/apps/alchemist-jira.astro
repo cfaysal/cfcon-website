@@ -1,5 +1,9 @@
 ---
 import AppPage from '../../layouts/AppPage.astro';
+import Section from '../../components/Section.astro';
+import StepGrid from '../../components/StepGrid.astro';
+import Screenshot from '../../components/Screenshot.astro';
+import InfoCard from '../../components/InfoCard.astro';
 ---
 
 <AppPage
@@ -7,122 +11,56 @@ import AppPage from '../../layouts/AppPage.astro';
   platform="Jira"
   tagline="Convert ScriptRunner & SIL scripts to Cloud in seconds"
   icon="/icon-alchemist.png"
-  description="Migrating from Jira Server or Data Center and stuck with legacy scripts? Alchemist analyzes your Groovy, SIL, ScriptRunner, and Behaviour scripts and converts them to Cloud format using 1,300+ pattern-based transformations — no AI hallucination, just deterministic regex conversions with built-in risk assessment."
+  description="Migrating from Jira Server or Data Center and stuck with legacy scripts? Alchemist analyzes your Groovy, SIL, ScriptRunner, and Behaviour scripts and converts them to Cloud format using 500+ deterministic regex conversion patterns — no AI hallucination, just pattern-based transformations with built-in risk assessment and Cloud Readiness Score."
   features={[
     'HAPI-First Conversion — 70% shorter code than verbose REST output',
     'Language Detection — auto-detect Groovy vs. SIL from script content',
     'Risk Analysis — Cloud Readiness Score (0-100) per script',
-    '1,300+ conversion patterns — ScriptRunner Groovy, SIL, Behaviours, Jira Expressions',
-    'Migration Wizard — 4-step guided migration (Input, Analyze, Convert, Deploy)',
-    'Syntax Validation — validate converted code for common errors',
-    'Bulk Upload — multi-file batch conversion',
-    'Deploy Helper — step-by-step deployment guides per script type',
+    '500+ conversion patterns — ScriptRunner Groovy, SIL, Behaviours, Jira Expressions',
+    'Native Automation Detection — tells you when a script is unnecessary because built-in Jira Automation suffices',
     'Script Builder — visual drag-and-drop script assembly with 26 blocks across 8 categories (Standard+)',
     'Use-Case Templates — 6 ready-made workflows (Cascade Priority, Bulk Update, WSJF Score, and more)',
-    'AI Script Generator — intelligent 3-stage routing: detects native Automation, matches templates, or generates via Rovo AI',
-    'Alchemist AI — Rovo Agent for conversational migration and script generation (Advanced)',
+    'Alchemist AI — Rovo Agent for conversational migration and AI-assisted completion of unconverted fragments (Advanced)',
+    'Migration Wizard — 4-step guided migration (Input, Analyze, Convert, Deploy)',
+    'Bulk Upload — multi-file batch conversion',
+    'Syntax Validation — validate converted code for common errors',
+    'Deploy Helper — step-by-step deployment guides per script type',
     'Export as JSON, PDF, or plain script',
   ]}
   marketplaceUrl="https://marketplace.atlassian.com/apps/948516184/alchemist-for-jira"
 >
-  <!-- Supported Conversions -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">Supported conversions</h2>
+  <Section title="Supported conversions">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="bg-surface border border-border rounded-lg p-5">
-        <h3 class="font-semibold mb-2">ScriptRunner Groovy</h3>
-        <p class="text-text-light text-sm">Java API to Cloud Groovy (HAPI/REST) — 630+ patterns</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5">
-        <h3 class="font-semibold mb-2">Power Scripts (SIL)</h3>
-        <p class="text-text-light text-sm">SIL DC to SIL Cloud — 356+ patterns</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5">
-        <h3 class="font-semibold mb-2">Behaviours</h3>
-        <p class="text-text-light text-sm">Server Behaviours to ScriptRunner Behaviours Cloud</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5">
-        <h3 class="font-semibold mb-2">Jira Expressions</h3>
-        <p class="text-text-light text-sm">260+ condition/validator templates</p>
-      </div>
+      <InfoCard title="ScriptRunner Groovy" description="Java API to Cloud Groovy (HAPI/REST) — 476 conversion patterns" />
+      <InfoCard title="Power Scripts (SIL)" description="SIL DC to SIL Cloud — 181 patterns" />
+      <InfoCard title="Behaviours" description="Server Behaviours to ScriptRunner Behaviours Cloud" />
+      <InfoCard title="Jira Expressions" description="31 conversion patterns + 280 templates (conditions, validators, calculated fields)" />
     </div>
-  </div>
+  </Section>
 
-  <!-- Script Builder -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">Script Builder</h2>
-    <p class="text-text-light mb-6">Don't have a legacy script to convert? Build new Cloud scripts visually — no coding required. Drag blocks, pick a template, or describe what you need and let AI figure out the rest.</p>
+  <Section title="Script Builder" subtitle="Don't have a legacy script to convert? Build new Cloud scripts visually — no coding required. Drag blocks, pick a template, or describe what you need and let AI figure out the rest.">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-surface border border-border rounded-lg p-5">
-        <h3 class="font-semibold mb-2">Visual Block Assembly</h3>
-        <p class="text-text-light text-sm">26 blocks across 8 categories — Work Items, Search, Fields, Transitions, Comments, Notifications, Control Flow, Users. Assemble scripts by stacking blocks with live HAPI Groovy preview.</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5">
-        <h3 class="font-semibold mb-2">Use-Case Templates</h3>
-        <p class="text-text-light text-sm">6 ready-made workflows: Cascade Priority, Bulk Update, WSJF Score, Cross-Project Clone, Sprint Cleanup, and Epic Completion. One click loads a pre-built block assembly.</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5">
-        <h3 class="font-semibold mb-2">AI Script Generator</h3>
-        <p class="text-text-light text-sm">Describe what you need in plain text. Alchemist routes your request through 3 stages: native Jira Automation detection, template matching, and Rovo AI generation for complex cases.</p>
-      </div>
+      <InfoCard title="Visual Block Assembly" description="26 blocks across 8 categories — Work Items, Search, Fields, Transitions, Comments, Notifications, Control Flow, Users. Assemble scripts by stacking blocks with live HAPI Groovy preview." />
+      <InfoCard title="Use-Case Templates" description="6 ready-made workflows: Cascade Priority, Bulk Update, WSJF Score, Cross-Project Clone, Sprint Cleanup, and Epic Completion. One click loads a pre-built block assembly." />
+      <InfoCard title="AI Script Generator" description="Describe what you need in plain text. Alchemist routes your request through 3 stages: native Jira Automation detection, template matching, and Rovo AI generation for complex cases." />
     </div>
-  </div>
+  </Section>
 
-  <!-- How it works -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">How it works</h2>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">1</div>
-        <h3 class="font-semibold mb-1">Input</h3>
-        <p class="text-text-light text-sm">Paste a script or upload multiple files</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">2</div>
-        <h3 class="font-semibold mb-1">Analyze</h3>
-        <p class="text-text-light text-sm">Risk assessment with Cloud Readiness Score</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">3</div>
-        <h3 class="font-semibold mb-1">Convert</h3>
-        <p class="text-text-light text-sm">Pattern-based transformation to Cloud format</p>
-      </div>
-      <div class="bg-surface border border-border rounded-lg p-5 text-center">
-        <div class="text-3xl font-bold text-primary mb-2">4</div>
-        <h3 class="font-semibold mb-1">Deploy</h3>
-        <p class="text-text-light text-sm">Step-by-step deployment guide per script type</p>
-      </div>
-    </div>
-  </div>
+  <Section title="How it works">
+    <StepGrid steps={[
+      { title: 'Input', description: 'Paste a script or upload multiple files' },
+      { title: 'Analyze', description: 'Risk assessment with Cloud Readiness Score' },
+      { title: 'Convert', description: 'Pattern-based transformation to Cloud format' },
+      { title: 'Deploy', description: 'Step-by-step deployment guide per script type' },
+    ]} />
+  </Section>
 
-  <!-- Screenshots -->
-  <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Script Builder</h3>
-        <img src="/apps/alchemist-jira/script-builder.png" alt="Visual Script Builder with drag-and-drop blocks" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Script Builder — Result</h3>
-        <img src="/apps/alchemist-jira/script-builder-result.png" alt="Script Builder generated output" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">App Overview</h3>
-        <img src="/apps/alchemist-jira/app-overview.png" alt="Alchemist App Overview" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Risk Analysis</h3>
-        <img src="/apps/alchemist-jira/risk-analysis.png" alt="Risk Analysis with Cloud Readiness Score" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Conversion Output</h3>
-        <img src="/apps/alchemist-jira/conversion-output.png" alt="Conversion Output" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Migration Wizard</h3>
-        <img src="/apps/alchemist-jira/migration-wizard.png" alt="Migration Wizard" class="rounded-xl border border-border w-full" loading="lazy" />
-      </div>
+  <Section title="Screenshots">
+    <div class="space-y-8">
+      <Screenshot title="Script Builder — Overview" src="/apps/alchemist-jira/script-builder.png" alt="Visual Script Builder with 26 blocks and 6 templates" />
+      <Screenshot title="Native Automation Detection" src="/apps/alchemist-jira/script-builder-native-detection.png" alt="Native Automation Detection — You don't need a script for this" />
+      <Screenshot title="Script Builder — Assembly with Generated Code" src="/apps/alchemist-jira/script-builder-full.png" alt="Script Builder with blocks assembled and generated HAPI code" />
+      <Screenshot title="Alchemist AI (Rovo Agent)" src="/apps/alchemist-jira/script-builder-rovo.png" alt="Alchemist AI — Rovo Agent generating Cloud HAPI script" />
     </div>
-  </div>
+  </Section>
 </AppPage>

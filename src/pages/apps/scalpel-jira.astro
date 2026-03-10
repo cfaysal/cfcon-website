@@ -1,5 +1,9 @@
 ---
 import AppPage from '../../layouts/AppPage.astro';
+import Section from '../../components/Section.astro';
+import StepGrid from '../../components/StepGrid.astro';
+import Screenshot from '../../components/Screenshot.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
 ---
 
 <AppPage
@@ -24,86 +28,26 @@ import AppPage from '../../layouts/AppPage.astro';
   ]}
   marketplaceUrl="https://marketplace.atlassian.com/apps/1522073931/scalpel-for-jira"
 >
-  <!-- How it works -->
-  <div class="mb-14 fade-in">
-    <h2 class="text-2xl font-bold mb-6">How it works</h2>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-      <div class="glass-card rounded-xl p-5 text-center">
-        <div class="text-3xl font-extrabold text-primary mb-2">1</div>
-        <h3 class="font-semibold mb-1">Scan</h3>
-        <p class="text-text-light text-sm">Run 12+ scanner modules to discover configuration issues across your instance</p>
-      </div>
-      <div class="glass-card rounded-xl p-5 text-center">
-        <div class="text-3xl font-extrabold text-primary mb-2">2</div>
-        <h3 class="font-semibold mb-1">Diagnose</h3>
-        <p class="text-text-light text-sm">Deep Scan cross-references and 3-tier analysis to understand root causes</p>
-      </div>
-      <div class="glass-card rounded-xl p-5 text-center">
-        <div class="text-3xl font-extrabold text-primary mb-2">3</div>
-        <h3 class="font-semibold mb-1">Plan</h3>
-        <p class="text-text-light text-sm">Treatment plans with What-If simulation before making changes</p>
-      </div>
-      <div class="glass-card rounded-xl p-5 text-center">
-        <div class="text-3xl font-extrabold text-primary mb-2">4</div>
-        <h3 class="font-semibold mb-1">Execute</h3>
-        <p class="text-text-light text-sm">Apply fixes with rollback support and full audit trail</p>
-      </div>
-    </div>
-  </div>
+  <Section title="How it works">
+    <StepGrid steps={[
+      { title: 'Scan', description: 'Run 12+ scanner modules to discover configuration issues across your instance' },
+      { title: 'Diagnose', description: 'Deep Scan cross-references and 3-tier analysis to understand root causes' },
+      { title: 'Plan', description: 'Treatment plans with What-If simulation before making changes' },
+      { title: 'Execute', description: 'Apply fixes with rollback support and full audit trail' },
+    ]} />
+  </Section>
 
-  <!-- Workflow Manager Video -->
-  <div class="mb-14 fade-in">
-    <h2 class="text-2xl font-bold mb-2">Workflow Manager</h2>
-    <p class="text-text-light text-sm mb-6">Analyze workflow transitions, detect broken plugin rules, disabled conditions, and missing post-functions — all in one view.</p>
-    <div class="glass-card rounded-2xl overflow-hidden p-1">
-      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-        <iframe
-          src="https://www.youtube.com/embed/hIr6NttuQOk?rel=0&modestbranding=1&vq=hd1080"
-          title="Scalpel for Jira — Workflow Manager"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-          style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:0.75rem;"
-        ></iframe>
-      </div>
-    </div>
-  </div>
+  <Section title="Workflow Manager" subtitle="Analyze workflow transitions, detect broken plugin rules, disabled conditions, and missing post-functions — all in one view.">
+    <VideoEmbed youtubeId="hIr6NttuQOk" title="Scalpel for Jira — Workflow Manager" />
+  </Section>
 
-  <!-- Screenshots -->
-  <div class="mb-14 fade-in">
-    <h2 class="text-2xl font-bold mb-6">Screenshots</h2>
+  <Section title="Screenshots">
     <div class="space-y-8">
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Dashboard — Health Score, Findings Breakdown & Trend</h3>
-        <div class="glass-card rounded-2xl overflow-hidden p-1">
-          <img src="/apps/scalpel-jira/Dashboard.png" alt="Scalpel Dashboard with Health Score and Trend" class="rounded-xl w-full lightbox-trigger" loading="lazy" />
-        </div>
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Deep Scan — Anatomy Map with Scheme Relationships</h3>
-        <div class="glass-card rounded-2xl overflow-hidden p-1">
-          <img src="/apps/scalpel-jira/anatomy_map_new.png" alt="Deep Scan Anatomy Map" class="rounded-xl w-full lightbox-trigger" loading="lazy" />
-        </div>
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Anatomy Map — Drill-Down to Screen Fields</h3>
-        <div class="glass-card rounded-2xl overflow-hidden p-1">
-          <img src="/apps/scalpel-jira/anatomy_map_new_drill.png" alt="Anatomy Map Drill-Down" class="rounded-xl w-full lightbox-trigger" loading="lazy" />
-        </div>
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Config Element Management Suite</h3>
-        <div class="glass-card rounded-2xl overflow-hidden p-1">
-          <img src="/apps/scalpel-jira/scalpel_managers_suite.png" alt="Config Element Management Suite" class="rounded-xl w-full lightbox-trigger" loading="lazy" />
-        </div>
-      </div>
-      <div>
-        <h3 class="text-sm font-medium text-text-light mb-2">Filter & Dashboard Audit — Broken JQL Detection</h3>
-        <div class="glass-card rounded-2xl overflow-hidden p-1">
-          <img src="/apps/scalpel-jira/filter_jql_broken.png" alt="Filter and Dashboard Audit" class="rounded-xl w-full lightbox-trigger" loading="lazy" />
-        </div>
-      </div>
+      <Screenshot title="Dashboard — Health Score, Findings Breakdown & Trend" src="/apps/scalpel-jira/Dashboard.png" alt="Scalpel Dashboard with Health Score and Trend" />
+      <Screenshot title="Deep Scan — Anatomy Map with Scheme Relationships" src="/apps/scalpel-jira/anatomy_map_new.png" alt="Deep Scan Anatomy Map" />
+      <Screenshot title="Anatomy Map — Drill-Down to Screen Fields" src="/apps/scalpel-jira/anatomy_map_new_drill.png" alt="Anatomy Map Drill-Down" />
+      <Screenshot title="Config Element Management Suite" src="/apps/scalpel-jira/scalpel_managers_suite.png" alt="Config Element Management Suite" />
+      <Screenshot title="Filter & Dashboard Audit — Broken JQL Detection" src="/apps/scalpel-jira/filter_jql_broken.png" alt="Filter and Dashboard Audit" />
       <div>
         <h3 class="text-sm font-medium text-text-light mb-2">Settings — Scan Configuration, Detection & Export</h3>
         <div class="glass-card rounded-2xl overflow-hidden p-1 space-y-1">
@@ -113,5 +57,5 @@ import AppPage from '../../layouts/AppPage.astro';
         </div>
       </div>
     </div>
-  </div>
+  </Section>
 </AppPage>
