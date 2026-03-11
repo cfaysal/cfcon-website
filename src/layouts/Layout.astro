@@ -42,12 +42,14 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet" />
     <title>{title} | CFCON</title>
   </head>
   <body class="bg-surface-dark text-text min-h-screen flex flex-col antialiased font-sans">
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    <div class="scroll-progress" id="scroll-progress"></div>
     <Header />
-    <main class="flex-1">
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
     <Footer />
@@ -95,6 +97,15 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
         { threshold: 0.5 }
       );
       document.querySelectorAll('.stat-number').forEach((el) => counterObserver.observe(el));
+
+      // Scroll progress
+      const scrollBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        if (scrollBar) scrollBar.style.width = progress + '%';
+      }, { passive: true });
 
       // Lightbox
       const overlay = document.getElementById('lightbox');

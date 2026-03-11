@@ -11,7 +11,8 @@
   --color-text: #E8E8E8;
   --color-text-light: #9A9A9A;
   --color-border: #3D3D3D;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Sora', 'DM Sans', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
 }
 
@@ -351,6 +352,54 @@
 }
 .lightbox-trigger:hover {
   opacity: 0.85;
+}
+
+/* ── Display font ────────────────────────────── */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ── Button active press ─────────────────────── */
+.btn-glow:active,
+.btn-outline-glow:active {
+  transform: scale(0.97);
+}
+
+/* ── Focus ring ──────────────────────────────── */
+:focus-visible {
+  outline: 2px solid rgba(212, 32, 39, 0.7);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Skip to content ─────────────────────────── */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 0 0.75rem 0.75rem;
+  transition: top 0.2s ease;
+}
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* ── Scroll progress bar ─────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  z-index: 60;
+  width: 0%;
+  transition: none;
 }
 
 /* ── Smooth scroll ────────────────────────────── */
