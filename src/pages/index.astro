@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import AppCard from '../components/AppCard.astro';
 import ProcessFlow from '../components/ProcessFlow.astro';
+import StatsSection from '../components/StatsSection.tsx';
+import LogoMarquee from '../components/LogoMarquee.tsx';
+import Testimonials from '../components/Testimonials.tsx';
 
 const apps = [
   {
@@ -64,6 +67,13 @@ const organizationJsonLd = {
 <Layout title="Home" jsonLd={organizationJsonLd}>
   <!-- Hero -->
   <section class="hero-glow bg-gradient-to-b from-primary-dark via-primary-dark to-surface-dark text-white py-28 md:py-36">
+    <!-- Aurora background -->
+    <div class="aurora-bg">
+      <div class="aurora-beam aurora-beam-1"></div>
+      <div class="aurora-beam aurora-beam-2"></div>
+      <div class="aurora-beam aurora-beam-3"></div>
+    </div>
+
     <!-- Floating orbs -->
     <div class="hero-orb hero-orb-1"></div>
     <div class="hero-orb hero-orb-2"></div>
@@ -102,27 +112,18 @@ const organizationJsonLd = {
     </div>
   </section>
 
+  <!-- Trusted by -->
+  <section class="py-12 border-b border-white/5 bg-surface-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-center text-xs font-semibold tracking-widest uppercase text-text-light/50 mb-4">Trusted by teams at</p>
+      <LogoMarquee client:visible />
+    </div>
+  </section>
+
   <!-- Stats -->
   <section class="py-16 border-b border-white/5 grid-pattern">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center stagger-children">
-        <div>
-          <div class="stat-number">6</div>
-          <div class="text-text-light text-sm mt-2 tracking-wide uppercase">Marketplace Apps</div>
-        </div>
-        <div>
-          <div class="stat-number">12+</div>
-          <div class="text-text-light text-sm mt-2 tracking-wide uppercase">Scanner Modules</div>
-        </div>
-        <div>
-          <div class="stat-number">19</div>
-          <div class="text-text-light text-sm mt-2 tracking-wide uppercase">Admin Tools</div>
-        </div>
-        <div>
-          <div class="stat-number">0</div>
-          <div class="text-text-light text-sm mt-2 tracking-wide uppercase">External Servers</div>
-        </div>
-      </div>
+      <StatsSection client:load />
     </div>
   </section>
 
@@ -136,9 +137,9 @@ const organizationJsonLd = {
           Making your Atlassian tools work harder for you.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Consulting -->
-        <div class="slide-in-left glow-card">
+      <div class="bento-grid stagger-children">
+        <!-- Consulting — wide -->
+        <div class="bento-wide glow-card">
           <div class="glow-card-inner rounded-2xl">
             <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5 ring-1 ring-primary/20">
               <svg width="24" height="24" fill="none" stroke="currentColor" class="text-primary" stroke-width="2">
@@ -149,36 +150,58 @@ const organizationJsonLd = {
             <p class="text-text-light leading-relaxed mb-5">
               Process analysis, cloud migrations, infrastructure design, and ongoing support. We optimize your Atlassian setup so your team can focus on what matters.
             </p>
-            <ul class="space-y-2.5 text-sm text-text-light">
-              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Cloud migration & strategy</li>
-              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Process optimization</li>
-              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Administration & support</li>
-              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Training & enablement</li>
-            </ul>
+            <div class="grid grid-cols-2 gap-2.5 text-sm text-text-light">
+              <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Cloud migration & strategy</span>
+              <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Process optimization</span>
+              <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Administration & support</span>
+              <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span> Training & enablement</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security -->
+        <div class="glow-card">
+          <div class="glow-card-inner rounded-2xl flex flex-col items-center text-center">
+            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5 ring-1 ring-primary/20">
+              <svg width="28" height="28" fill="none" stroke="currentColor" class="text-primary" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2">Runs on Forge</h3>
+            <p class="text-sm text-text-light leading-relaxed">No external servers. Your data never leaves your Atlassian instance.</p>
           </div>
         </div>
 
         <!-- Marketplace Apps -->
-        <div class="slide-in-right glow-card">
-          <div class="glow-card-inner rounded-2xl">
-            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5 ring-1 ring-accent/20">
-              <svg width="24" height="24" fill="none" stroke="currentColor" class="text-accent" stroke-width="2">
+        <div class="glow-card">
+          <div class="glow-card-inner rounded-2xl flex flex-col items-center text-center">
+            <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-5 ring-1 ring-accent/20">
+              <svg width="28" height="28" fill="none" stroke="currentColor" class="text-accent" stroke-width="2">
                 <rect x="3" y="3" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
                 <rect x="14" y="3" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
                 <rect x="3" y="14" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
                 <rect x="14" y="14" width="7" height="7" rx="1" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <h3 class="text-xl font-bold mb-3">Marketplace Apps</h3>
+            <h3 class="text-lg font-bold mb-2">Marketplace Apps</h3>
+            <p class="text-sm text-text-light leading-relaxed">Purpose-built Forge apps for Jira & Confluence with Free, Standard & Advanced editions.</p>
+          </div>
+        </div>
+
+        <!-- Editions — wide -->
+        <div class="bento-wide glow-card">
+          <div class="glow-card-inner rounded-2xl">
+            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5 ring-1 ring-accent/20">
+              <svg width="24" height="24" fill="none" stroke="currentColor" class="text-accent" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 6h6v6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Built by practitioners</h3>
             <p class="text-text-light leading-relaxed mb-5">
-              Purpose-built Forge apps for Jira and Confluence. Built on Atlassian's secure cloud platform, designed for real-world admin needs.
+              Every app starts with real pain points we've encountered in production Atlassian environments — then engineered into tools for everyone.
             </p>
-            <ul class="space-y-2.5 text-sm text-text-light">
-              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Runs on Atlassian <span class="mono text-text-light/50">(Forge)</span></li>
-              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> No external data transfer</li>
-              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Free, Standard & Advanced editions</li>
-              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Jira & Confluence</li>
-            </ul>
+            <div class="grid grid-cols-2 gap-2.5 text-sm text-text-light">
+              <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Real-world admin needs</span>
+              <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Continuous improvement</span>
+              <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> No feature bloat</span>
+              <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span> Active maintenance</span>
+            </div>
           </div>
         </div>
       </div>
@@ -225,6 +248,20 @@ const organizationJsonLd = {
           View all on Atlassian Marketplace
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5-5-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+      </div>
+    </div>
+  </section>
+  <div class="section-divider"></div>
+
+  <!-- Testimonials -->
+  <section class="py-24 bg-surface dot-pattern">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 fade-in">
+        <p class="text-primary text-sm font-semibold tracking-widest uppercase mb-3">What people say</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Trusted by Atlassian teams</h2>
+      </div>
+      <div class="fade-in">
+        <Testimonials client:visible />
       </div>
     </div>
   </section>

@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import FooterSection from '../components/ui/FooterSection.tsx';
 
 interface Props {
   title: string;
@@ -52,7 +52,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
     <main id="main-content" class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <FooterSection client:load />
     <!-- Lightbox -->
     <div class="lightbox-overlay" id="lightbox">
       <img src="" alt="" id="lightbox-img" />

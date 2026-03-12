@@ -414,3 +414,79 @@ html {
   background: rgba(212, 32, 39, 0.3);
   color: #fff;
 }
+
+/* ── Logo marquee ────────────────────────────── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ── Aurora hero background ──────────────────── */
+.aurora-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.aurora-beam {
+  position: absolute;
+  width: 60%;
+  height: 200%;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.12;
+  animation: aurora-drift 12s ease-in-out infinite alternate;
+}
+.aurora-beam-1 {
+  background: linear-gradient(180deg, #D42027, #D4922A);
+  top: -80%;
+  left: -10%;
+  animation-delay: 0s;
+}
+.aurora-beam-2 {
+  background: linear-gradient(180deg, #E85A5F, #D42027);
+  top: -60%;
+  right: -20%;
+  animation-delay: -4s;
+  animation-duration: 16s;
+}
+.aurora-beam-3 {
+  background: linear-gradient(180deg, #D4922A, #E85A5F);
+  top: -40%;
+  left: 20%;
+  animation-delay: -8s;
+  animation-duration: 20s;
+  opacity: 0.08;
+}
+@keyframes aurora-drift {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(40px) rotate(3deg) scale(1.05); }
+  100% { transform: translateY(-20px) rotate(-2deg) scale(0.95); }
+}
+
+/* ── Bento grid ──────────────────────────────── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 1.25rem;
+}
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.bento-wide {
+  grid-column: span 2;
+}
+@media (max-width: 768px) {
+  .bento-wide {
+    grid-column: span 1;
+  }
+}
