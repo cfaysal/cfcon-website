@@ -99,6 +99,8 @@
 .stagger-children.visible > *:nth-child(6) { transition-delay: 0.3s; }
 .stagger-children.visible > *:nth-child(7) { transition-delay: 0.35s; }
 .stagger-children.visible > *:nth-child(8) { transition-delay: 0.4s; }
+.stagger-children.visible > *:nth-child(9) { transition-delay: 0.45s; }
+.stagger-children.visible > *:nth-child(10) { transition-delay: 0.5s; }
 .stagger-children.visible > * {
   opacity: 1;
   transform: translateY(0);
