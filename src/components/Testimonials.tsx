@@ -2,16 +2,22 @@ import { useEffect, useState } from 'react';
 
 const testimonials = [
   {
+    quote: "18,000 issues with broken legacy URLs — direct, indirect and remote issue links — fixed in one bulk operation after a major consolidation. Years of technical debt, gone. Absolute game changer for our team.",
+    name: "Atlassian Operations Team",
+    company: "SUVA",
+    role: "National Accident Insurance",
+  },
+  {
     quote: "CFCON transformed our Atlassian setup. Their deep technical expertise and hands-on approach made a complex migration feel seamless.",
     name: "Project Lead",
     company: "Enterprise Client",
     role: "IT Operations",
   },
   {
-    quote: "The Scalpel app alone saved us weeks of manual cleanup work. Having a consultant who also builds the tools — that's a rare combination.",
+    quote: "The scripts and core logic behind Scalpel massively reduced the workload on Jira's Cloud Migration Assistant. What used to take weeks of manual pre-migration cleanup now runs in minutes.",
     name: "Atlassian Admin",
-    company: "Marketplace Customer",
-    role: "System Administration",
+    company: "Enterprise Migration",
+    role: "Cloud Migration",
   },
   {
     quote: "Reliable, fast, and always available when it counts. CFCON has been our go-to partner for everything Atlassian.",

@@ -5,6 +5,7 @@ import ProcessFlow from '../components/ProcessFlow.astro';
 import StatsSection from '../components/StatsSection.tsx';
 import LogoMarquee from '../components/LogoMarquee.tsx';
 import Testimonials from '../components/Testimonials.tsx';
+import GrainHero from '../components/GrainHero.tsx';
 
 const apps = [
   {
@@ -67,17 +68,8 @@ const organizationJsonLd = {
 <Layout title="Home" jsonLd={organizationJsonLd}>
   <!-- Hero -->
   <section class="hero-glow bg-gradient-to-b from-primary-dark via-primary-dark to-surface-dark text-white py-28 md:py-36">
-    <!-- Aurora background -->
-    <div class="aurora-bg">
-      <div class="aurora-beam aurora-beam-1"></div>
-      <div class="aurora-beam aurora-beam-2"></div>
-      <div class="aurora-beam aurora-beam-3"></div>
-    </div>
-
-    <!-- Floating orbs -->
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="hero-orb hero-orb-3"></div>
+    <!-- Grain gradient shader background -->
+    <GrainHero client:load />
 
     <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
       <img src="/logo.png" alt="CFCON Consulting" class="h-36 md:h-52 mx-auto mb-10 drop-shadow-2xl scale-in" />
