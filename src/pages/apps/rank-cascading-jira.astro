@@ -15,7 +15,8 @@ import Screenshot from '../../components/Screenshot.astro';
     'Board-Based Ranking — position on your board determines base rank',
     'Status Priority — In Progress ranks before Ready, which ranks before Backlog',
     'Swimlane Grouping — group by Epic, Assignee, Priority, or custom JQL',
-    'Rank Inheritance — child issues automatically inherit parent rank',
+    'Rank Inheritance — child issues inherit parent rank via Parent Hierarchy, Issue Links, or Both',
+    'Portfolio → Team Board — leadership prioritizes Epics, team backlogs update automatically',
     'Cross-Board Ranking — aggregate work items across multiple boards',
     'Visual Rank Map — interactive hierarchy view with swimlanes and epics',
     'Conflict Detection — health scoring (A-F) identifies ranking inconsistencies',
@@ -27,11 +28,19 @@ import Screenshot from '../../components/Screenshot.astro';
 >
   <Section title="How it works">
     <StepGrid steps={[
-      { title: 'Create', description: 'Create a cascade and select a board' },
-      { title: 'Configure', description: 'Set target field, status priority, and swimlanes' },
-      { title: 'Preview', description: 'Review calculated ranks before applying' },
-      { title: 'Sync', description: 'Ranks are calculated and written to your field' },
+      { title: '1. Portfolio Board', description: 'Set up a Scrum or Kanban board as your source. Arrange Epics by dragging them to define priority.' },
+      { title: '2. Create Cascade', description: 'Select your board, a target number field, status priority order, and optionally enable inheritance (Parent Hierarchy, Issue Links, or Both).' },
+      { title: '3. Sync', description: 'Run a sync — ranks are calculated and written to your target field. Child issues inherit their parent Epic\'s rank.' },
+      { title: '4. Team Board', description: 'Create a team board with ORDER BY your rank field. The backlog automatically reflects portfolio priorities — no manual ranking needed.' },
     ]} />
+  </Section>
+
+  <Section title="Portfolio → Team Board">
+    <p class="text-muted-foreground mb-4">
+      The most powerful pattern: Leadership prioritizes Epics on a Portfolio board, and every team backlog updates automatically after sync.
+      Manual ranking is disabled on team boards — priorities flow from the cascade, not from drag-and-drop.
+      One sync updates all team boards simultaneously.
+    </p>
   </Section>
 
   <Section title="Screenshots">
