@@ -1,2 +1,4 @@
-/apps/jsm-vendor-connect /apps/vendor-connect 301
-/apps/jsm-vendor-connect/ /apps/vendor-connect/ 301
+/apps/jsm-vendor-connect /apps/vendor-connect-for-jsm 301
+/apps/jsm-vendor-connect/ /apps/vendor-connect-for-jsm/ 301
+/apps/vendor-connect /apps/vendor-connect-for-jsm 301
+/apps/vendor-connect/ /apps/vendor-connect-for-jsm/ 301
