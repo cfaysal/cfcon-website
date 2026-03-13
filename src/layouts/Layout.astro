@@ -70,33 +70,6 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
       );
       document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in, .blur-in, .stagger-children').forEach((el) => observer.observe(el));
 
-      // Animated counter
-      const counterObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && !entry.target.dataset.counted) {
-              entry.target.dataset.counted = 'true';
-              const target = entry.target.textContent.trim();
-              const suffix = target.replace(/[\d.]/g, '');
-              const num = parseFloat(target);
-              if (isNaN(num)) return;
-              const duration = 1200;
-              const start = performance.now();
-              const step = (now) => {
-                const progress = Math.min((now - start) / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                const current = Math.round(eased * num);
-                entry.target.textContent = current + suffix;
-                if (progress < 1) requestAnimationFrame(step);
-              };
-              entry.target.textContent = '0' + suffix;
-              requestAnimationFrame(step);
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
-      document.querySelectorAll('.stat-number').forEach((el) => counterObserver.observe(el));
 
       // Scroll progress
       const scrollBar = document.getElementById('scroll-progress');

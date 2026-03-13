@@ -315,6 +315,7 @@
   font-weight: 800;
   font-size: 2.5rem;
   line-height: 1;
+  font-variant-numeric: tabular-nums;
   background: linear-gradient(180deg, #E8E8E8 0%, #9A9A9A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
