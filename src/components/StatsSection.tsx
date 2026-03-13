@@ -9,16 +9,17 @@ const stats = [
 
 export default function StatsSection() {
   const [counts, setCounts] = useState(stats.map(() => 0));
-  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
     if (!ref.current) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          observer.disconnect();
 
           const steps = 40;
           const stepDuration = 50;
@@ -41,7 +42,7 @@ export default function StatsSection() {
 
     observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [hasAnimated]);
+  }, []);
 
   return (
     <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-8">
